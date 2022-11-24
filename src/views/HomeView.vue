@@ -42,19 +42,16 @@
           </router-link>
         </div>
       </div>
+
       <div class="row mt-5">
-        <div class="col-md-12">
+        <div class="col-md-12 colCarousel">
           <h3 class="text-center produkbaru">PRODUK TERBARU</h3>
-        </div>
-
-        <!-- CAROUSEL -->
-
-        <div class="row">
-          <div class="container">
-            <carousel>
-              <!-- PUUUUSIIIIIIIIIIIIIIIIIIIIIIINGGGGGGG -->
-            </carousel>
-          </div>
+          <!-- CAROUSEL -->
+          <carousel autoplay :perPageCustom="[[456, 2],[768, 3], [1024, 4]]">
+            <slide class="slideCard" v-for="item in product" :key="item.id" >  
+              <CardProduct :productprop="item"></CardProduct>
+            </slide>
+          </carousel>
         </div>
 
         <div class="col-md-12">
@@ -69,16 +66,20 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Navbar from "@/components/Navbar.vue";
-import carousel from "vue-owl-carousel";
+// import carousel from "vue-owl-carousel";
 import axios from "axios";
 import CardProduct from "@/components/CardProduct.vue";
+import { Carousel, Slide } from "vue-carousel";
 
 export default {
   name: "HomeView",
   components: {
     Navbar,
-    carousel,
+    // carousel,
     CardProduct,
+    Carousel,
+    Slide,
+
     // HelloWorld
   },
 
