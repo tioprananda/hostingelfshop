@@ -47,19 +47,30 @@
         <div class="col-md-12 colCarousel">
           <h3 class="text-center produkbaru">PRODUK TERBARU</h3>
           <!-- CAROUSEL -->
-          <carousel autoplay :perPageCustom="[[456, 2],[768, 3], [1024, 4]]">
-            <slide class="slideCard" v-for="item in product" :key="item.id" >  
-              <CardProduct :productprop="item"></CardProduct>
-            </slide>
+          <carousel autoplay :perPageCustom="[[456, 1],[768, 3], [1024, 4]]">
+              <slide class="slideCard" v-for="item in product" :key="item.id"  > 
+                <CardProduct :productprop="item"></CardProduct>
+              </slide>  
           </carousel>
         </div>
+      </div>
 
-        <div class="col-md-12">
-          <h3 class="text-center">PRODUK TERLARIS</h3>
+      <div class="row mt-5 mb-5" >
+        <div class="col-md-12 colCarousel">
+          <h3 class="text-center produkbaru">PRODUK TERLARIS</h3>
+          <!-- CAROUSEL -->
+          <carousel autoplay :perPageCustom="[[456, 1], [768,2], [1024, 3]]">
+              <slide class="slideCard" v-for="item in dataBestProduct" :key="item.id"  > 
+                <CardProduct :productprop="item"></CardProduct>
+              </slide>  
+          </carousel>
         </div>
       </div>
     </div>
   </div>
+
+
+
 </template>
 
 <script>
@@ -86,14 +97,17 @@ export default {
   data: function () {
     return {
       product: [],
+      dataBestProduct: [],
     };
   },
 
   methods: {
     setProduct: function (data) {
-      this.product = data;
-      console.log(this.product);
+      this.product = data;      
     },
+    bestProduct : function (data) {
+      this.dataBestProduct = data;
+    }
   },
 
   mounted() {
@@ -101,7 +115,13 @@ export default {
       .get("http://localhost:3000/products")
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("gagal : ", error));
+    axios
+      .get("http://localhost:3000/best-products")
+      .then((response) => this.bestProduct(response.data))
+      .catch((error) => console.log("gagal : ", error));
   },
+  
+  
 };
 </script>
 

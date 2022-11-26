@@ -23,9 +23,9 @@ export default {
   
   <style scoped>
   .card {
-    height: 350px;
+    /* height: 320px; */
     margin: 30px auto;
-    padding: 0 20px;
+    padding: 10px 10px;
   }
 
   .card-body{
