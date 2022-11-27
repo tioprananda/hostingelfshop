@@ -9,7 +9,7 @@
             <router-link to="/" class="nav-link"><b-icon-house /> Home</router-link>
           </b-nav-item>
           <b-nav-item>
-            <router-link to="/products" class="nav-link"><b-icon-card-checklist /> Products</router-link>
+            <router-link to="/product" class="nav-link"><b-icon-card-checklist /> Products</router-link>
           </b-nav-item>
           <b-nav-item>
             <router-link to="/konfirmasi-pembayaran" class="nav-link"><b-icon-credit-card /> Pembayaran</router-link>
@@ -23,6 +23,7 @@
         </b-navbar-nav>
         <form class="d-flex ml-auto" role="search">
             <input
+            @keyup.enter="$emit('tambah',$event)"
               class="form-control me-2"
               type="search"
               placeholder="Search" 
@@ -39,7 +40,19 @@
 <script>
 export default {
   name: `Navbar`,
+  data: function(){
+    return {
+      
+    }
+  },
+  methods : {
+  
+  }
 };
 </script>
 
-<style></style>
+<style scoped>
+.nav-link {
+    color: white;
+}
+</style>

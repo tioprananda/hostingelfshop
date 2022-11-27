@@ -48,7 +48,7 @@
           <h3 class="text-center produkbaru">PRODUK TERBARU</h3>
           <!-- CAROUSEL -->
           <carousel autoplay :perPageCustom="[[456, 1],[768, 3], [1024, 4]]">
-              <slide class="slideCard" v-for="item in product" :key="item.id"  > 
+              <slide class="slideCard" v-for="item in product" :key="item.id" > 
                 <CardProduct :productprop="item"></CardProduct>
               </slide>  
           </carousel>
@@ -102,8 +102,8 @@ export default {
   },
 
   methods: {
-    setProduct: function (data) {
-      this.product = data;      
+    setProduct: function (data) {     
+      this.product = data;
     },
     bestProduct : function (data) {
       this.dataBestProduct = data;
