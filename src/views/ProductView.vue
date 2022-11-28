@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <Navbar class="mb-5"  v-on:tambah="tambahEmit($event)" v-on:tambahClick="tambahEmit($event)"></Navbar>
+    <Navbar class="mb-5"  v-on:submitproses="tambahEmit"></Navbar>
     <div class="container mt-5 mb-5">
       <div class="row mt-5">
         <div class="col mt-5">
@@ -51,9 +51,10 @@ export default {
       // console.log(this.product)
     },
     tambahEmit: function(event){
-      let dataCari = event.target.value;
+      let dataCari = event;
       this.caridata = dataCari;
       this.cariproduct();
+      // console.log(event)
     },
     cariproduct : function(){
       axios

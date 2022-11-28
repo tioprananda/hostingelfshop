@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Navbar></Navbar>
+    <router-link to="/product"><Navbar></Navbar></router-link>
 
     <div class="container">
       <div class="row mt-5">

@@ -21,10 +21,12 @@
             <router-link to="/item" class="nav-link"><b-icon-cart /> Item</router-link>
           </b-nav-item>
         </b-navbar-nav>
+        <!-- @keyup.enter="$emit('tambah',$event)" -->
+        <!-- v-on:submit.prevent="submitproses" -->
         <form class="d-flex ml-auto" role="search" v-on:submit.prevent="submitproses">
             <input
-            @keyup.enter="$emit('tambah',$event)"
-              v-model="dataSearch"
+            @keyup.enter="submitproses"
+            v-model="dataSearch"
               class="form-control me-2"
               type="text"
               placeholder="Search" 
@@ -47,10 +49,13 @@ export default {
     }
   },
   methods : {
-  submitproses : function() {
-    let kirimEmit = this.dataSearch;
-    console.log(kirimEmit)
-  //  this.$emit(`tambah`,kirimEmit)
+  submitproses : function(e){
+    let kirimMouse = this.dataSearch;
+    let kirimKeyboard = e.target.value;
+    if(kirimMouse || kirimKeyboard === true){
+        this.$emit('submitproses',this.dataSearch);
+        this.dataSearch = "";
+    }
   },
   }
 };
