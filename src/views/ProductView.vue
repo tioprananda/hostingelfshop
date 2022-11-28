@@ -6,7 +6,7 @@
         <div class="col mt-5">
           <ul class="nav justify-content-center">
             <li class="nav-item mt-2">
-                <button type="button" class="btnEdit" :class="{active:active(`semua`)}" @click = "buttonActive(`semua`)"><b-icon-filter/> Semua</button>
+                <button type="button" class="btnEdit" :class="{active:active(``)}" @click = "buttonActive(``)"><b-icon-filter/> Semua</button>
                 <button type="button" class="btnEdit" :class="{active:active(`baju`)}" @click = "buttonActive(`baju`)">Baju</button>
                 <button type="button" class="btnEdit" :class="{active:active(`celana`)}" @click = "buttonActive(`celana`)">Celana</button>
                 <button type="button" class="btnEdit" :class="{active:active(`tas`)}" @click = "buttonActive(`tas`)">Tas</button>
@@ -39,7 +39,7 @@ export default {
   },
   data:function(){
     return{
-      menu : `semua`,
+      menu : ``,
       product: [],
       caridata : ``,
       // dataCari : '',
@@ -74,8 +74,9 @@ export default {
         // console.log(dataButton)
 				// ubah data menu menjadi data baru dari parameter function button active
 				this.menu = dataButton;
+        this.caridata = this.menu;
+        this.cariproduct();
         console.log(this.caridata)
-        return this.caridata = this.menu;
 			}
     
      
