@@ -2,7 +2,7 @@
   "best-products": [
     {
       "id": 27,
-      "kode": "p27",
+      "kode": "baju",
       "nama": "Hoddie Gray",
       "harga": 12000,
       "is_ready": true,
@@ -10,7 +10,7 @@
     },
     {
       "id": 28,
-      "kode": "p28",
+      "kode": "baju",
       "nama": "Kaos Hoddie",
       "harga": 37000,
       "is_ready": true,
@@ -18,7 +18,7 @@
     },
     {
       "id": 29,
-      "kode": "p29",
+      "kode": "baju",
       "nama": "Kaos Neck Abu Muda",
       "harga": 33000,
       "is_ready": true,
@@ -28,7 +28,7 @@
   "products": [
     {
       "id": 1,
-      "kode": "p01",
+      "kode": "topi",
       "nama": "Topi Hitam",
       "harga": 20000,
       "is_ready": true,
@@ -36,7 +36,7 @@
     },
     {
       "id": 2,
-      "kode": "p02",
+      "kode": "tas",
       "nama": "Tas Hijau",
       "harga": 30000,
       "is_ready": true,
@@ -44,7 +44,7 @@
     },
     {
       "id": 3,
-      "kode": "p03",
+      "kode": "kaoskaki",
       "nama": "kaos kaki hitam",
       "harga": 12000,
       "is_ready": true,
@@ -52,7 +52,7 @@
     },
     {
       "id": 4,
-      "kode": "p04",
+      "kode": "celana",
       "nama": "Kodorai Jogger",
       "harga": 55000,
       "is_ready": true,
@@ -60,7 +60,7 @@
     },
     {
       "id": 5,
-      "kode": "p05",
+      "kode": "celana",
       "nama": "Jogger Hitam Pendek",
       "harga": 56000,
       "is_ready": true,
@@ -68,7 +68,7 @@
     },
     {
       "id": 6,
-      "kode": "p06",
+      "kode": "celana",
       "nama": "Celana Pantai",
       "harga": 30000,
       "is_ready": true,
@@ -76,7 +76,7 @@
     },
     {
       "id": 7,
-      "kode": "p07",
+      "kode": "aksesoris",
       "nama": "Cincin Skull",
       "harga": 23000,
       "is_ready": true,
@@ -84,7 +84,7 @@
     },
     {
       "id": 8,
-      "kode": "p08",
+      "kode": "celana",
       "nama": "Chino Cropped",
       "harga": 79000,
       "is_ready": true,
@@ -92,7 +92,7 @@
     },
     {
       "id": 9,
-      "kode": "p09",
+      "kode": "celana",
       "nama": "Chino Gray",
       "harga": 88000,
       "is_ready": true,
@@ -100,7 +100,7 @@
     },
     {
       "id": 10,
-      "kode": "p10",
+      "kode": "celana",
       "nama": "Jogger Army",
       "harga": 120000,
       "is_ready": true,
@@ -108,7 +108,7 @@
     },
     {
       "id": 11,
-      "kode": "p11",
+      "kode": "celana",
       "nama": "Jeans Panjang",
       "harga": 630000,
       "is_ready": true,
@@ -116,7 +116,7 @@
     },
     {
       "id": 12,
-      "kode": "p12",
+      "kode": "kaoskaki",
       "nama": "kaos kaki hitam",
       "harga": 12000,
       "is_ready": true,
@@ -124,7 +124,7 @@
     },
     {
       "id": 13,
-      "kode": "p13",
+      "kode": "aksesoris",
       "nama": "Dompet Kulit",
       "harga": 25000,
       "is_ready": true,
@@ -132,7 +132,7 @@
     },
     {
       "id": 14,
-      "kode": "p14",
+      "kode": "kaoskaki",
       "nama": "Kaos Kaki Pendek",
       "harga": 13000,
       "is_ready": true,
@@ -140,7 +140,7 @@
     },
     {
       "id": 15,
-      "kode": "p15",
+      "kode": "tas",
       "nama": "Tas Monol",
       "harga": 37000,
       "is_ready": true,
@@ -148,7 +148,7 @@
     },
     {
       "id": 16,
-      "kode": "p16",
+      "kode": "baju",
       "nama": "Batik Katun",
       "harga": 59000,
       "is_ready": true,
@@ -156,7 +156,7 @@
     },
     {
       "id": 17,
-      "kode": "p17",
+      "kode": "baju",
       "nama": "Seragam Kemeja",
       "harga": 69000,
       "is_ready": true,
@@ -164,7 +164,7 @@
     },
     {
       "id": 18,
-      "kode": "p09",
+      "kode": "kaoskaki",
       "nama": "Kaos Kaki Jari",
       "harga": 18000,
       "is_ready": true,
@@ -172,7 +172,7 @@
     },
     {
       "id": 19,
-      "kode": "p19",
+      "kode": "kaoskaki",
       "nama": "Kaos Kaki Belang Biru",
       "harga": 12000,
       "is_ready": true,
@@ -180,7 +180,7 @@
     },
     {
       "id": 20,
-      "kode": "p20",
+      "kode": "kaoskaki",
       "nama": "Kaos Kaki Belang Hitam",
       "harga": 12000,
       "is_ready": true,
@@ -188,7 +188,7 @@
     },
     {
       "id": 21,
-      "kode": "p21",
+      "kode": "kaoskaki",
       "nama": "Kaos Kaki Motif",
       "harga": 10000,
       "is_ready": true,
@@ -196,7 +196,7 @@
     },
     {
       "id": 22,
-      "kode": "p22",
+      "kode": "kaoskaki",
       "nama": "Kaos Kaki Panjang",
       "harga": 20000,
       "is_ready": true,
@@ -204,7 +204,7 @@
     },
     {
       "id": 23,
-      "kode": "p23",
+      "kode": "aksesoris",
       "nama": "Kacamata Aviator",
       "harga": 34000,
       "is_ready": true,
@@ -212,7 +212,7 @@
     },
     {
       "id": 24,
-      "kode": "p24",
+      "kode": "aksesoris",
       "nama": "Liontin Naga Biru",
       "harga": 30000,
       "is_ready": true,
@@ -220,7 +220,7 @@
     },
     {
       "id": 25,
-      "kode": "p25",
+      "kode": "aksesoris",
       "nama": "Liontin Naga Emas",
       "harga": 30000,
       "is_ready": true,
@@ -228,7 +228,7 @@
     },
     {
       "id": 26,
-      "kode": "p26",
+      "kode": "baju",
       "nama": "Kaos Putih Panjang",
       "harga": 45000,
       "is_ready": true,
@@ -236,7 +236,7 @@
     },
     {
       "id": 27,
-      "kode": "p27",
+      "kode": "baju",
       "nama": "Hoddie Gray",
       "harga": 12000,
       "is_ready": true,
@@ -244,7 +244,7 @@
     },
     {
       "id": 28,
-      "kode": "p28",
+      "kode": "baju",
       "nama": "Kaos Hoddie",
       "harga": 37000,
       "is_ready": true,
@@ -252,7 +252,7 @@
     },
     {
       "id": 29,
-      "kode": "p29",
+      "kode": "baju",
       "nama": "Kaos Neck Ungu",
       "harga": 35000,
       "is_ready": true,
@@ -260,7 +260,7 @@
     },
     {
       "id": 30,
-      "kode": "p30",
+      "kode": "aksesoris",
       "nama": "Syal Rajut",
       "harga": 23000,
       "is_ready": true,
@@ -268,7 +268,7 @@
     },
     {
       "id": 31,
-      "kode": "p31",
+      "kode": "topi",
       "nama": "Topi Canvas Army",
       "harga": 17000,
       "is_ready": true,
@@ -276,7 +276,7 @@
     },
     {
       "id": 32,
-      "kode": "p32",
+      "kode": "topi",
       "nama": "Topi Fedora Caplin",
       "harga": 29000,
       "is_ready": true,
@@ -284,7 +284,7 @@
     },
     {
       "id": 33,
-      "kode": "p33",
+      "kode": "topi",
       "nama": "Topi Snapback",
       "harga": 19000,
       "is_ready": true,
@@ -292,7 +292,7 @@
     },
     {
       "id": 34,
-      "kode": "p34",
+      "kode": "topi",
       "nama": "Topi Basic Twill",
       "harga": 18000,
       "is_ready": true,
@@ -300,7 +300,7 @@
     },
     {
       "id": 35,
-      "kode": "p35",
+      "kode": "topi",
       "nama": "Topi Komando Emboss",
       "harga": 12000,
       "is_ready": true,
@@ -308,7 +308,7 @@
     },
     {
       "id": 36,
-      "kode": "p36",
+      "kode": "topi",
       "nama": "Topi Tartan",
       "harga": 32000,
       "is_ready": true,
@@ -316,7 +316,7 @@
     },
     {
       "id": 37,
-      "kode": "p37",
+      "kode": "tas",
       "nama": "Tas Trim Gunung",
       "harga": 170000,
       "is_ready": true,
@@ -324,7 +324,7 @@
     },
     {
       "id": 38,
-      "kode": "p38",
+      "kode": "tas",
       "nama": "Tas Ransel",
       "harga": 20000,
       "is_ready": true,
@@ -332,7 +332,7 @@
     },
     {
       "id": 39,
-      "kode": "p39",
+      "kode": "tas",
       "nama": "Tas Pocket",
       "harga": 34000,
       "is_ready": true,
@@ -340,7 +340,7 @@
     },
     {
       "id": 40,
-      "kode": "p40",
+      "kode": "tas",
       "nama": "Tas Tote SIMPLE",
       "harga": 30000,
       "is_ready": true,
@@ -348,7 +348,7 @@
     },
     {
       "id": 41,
-      "kode": "p41",
+      "kode": "tas",
       "nama": "Tas Waterproof",
       "harga": 60000,
       "is_ready": true,
@@ -356,7 +356,7 @@
     },
     {
       "id": 42,
-      "kode": "p26",
+      "kode": "tas",
       "nama": "Tas Water Resistant Lipat",
       "harga": 45000,
       "is_ready": true,

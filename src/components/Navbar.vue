@@ -21,11 +21,12 @@
             <router-link to="/item" class="nav-link"><b-icon-cart /> Item</router-link>
           </b-nav-item>
         </b-navbar-nav>
-        <form class="d-flex ml-auto" role="search">
+        <form class="d-flex ml-auto" role="search" v-on:submit.prevent="submitproses">
             <input
             @keyup.enter="$emit('tambah',$event)"
+              v-model="dataSearch"
               class="form-control me-2"
-              type="search"
+              type="text"
               placeholder="Search" 
               aria-label="Search"/>
             <button class="btn btn-dark" type="submit">
@@ -42,11 +43,15 @@ export default {
   name: `Navbar`,
   data: function(){
     return {
-      
+      dataSearch : ``,
     }
   },
   methods : {
-  
+  submitproses : function() {
+    let kirimEmit = this.dataSearch;
+    console.log(kirimEmit)
+  //  this.$emit(`tambah`,kirimEmit)
+  },
   }
 };
 </script>

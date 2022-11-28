@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <Navbar class="mb-5"  v-on:tambah="tambahEmit($event)"></Navbar>
+    <Navbar class="mb-5"  v-on:tambah="tambahEmit($event)" v-on:tambahClick="tambahEmit($event)"></Navbar>
     <div class="container mt-5 mb-5">
       <div class="row mt-5">
         <div class="col mt-5">
@@ -48,7 +48,7 @@ export default {
   methods : {
     setProduct: function (data) {     
       this.product = data;
-      console.log(this.product)
+      // console.log(this.product)
     },
     tambahEmit: function(event){
       let dataCari = event.target.value;
@@ -71,11 +71,16 @@ export default {
     buttonActive : function(dataButton){
 			// jika data menu sama dengan data menu
 			if (this.menu === this.menu) {
+        // console.log(dataButton)
 				// ubah data menu menjadi data baru dari parameter function button active
-				return this.menu = dataButton;
+				this.menu = dataButton;
+        console.log(this.caridata)
+        return this.caridata = this.menu;
 			}
-		},
     
+     
+		},
+   
   },
   mounted(){
     axios
