@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/ProductView.vue'
+import CaraBeli from '../components/FooterDetail/CaraBeli.vue'
+import PanduanUkuran from '../components/FooterDetail/PanduanUkuran.vue'
+import Retur from '../components/FooterDetail/Retur.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +19,21 @@ const routes = [
     name: 'product',
     component: ProductView,
   },
+  {
+    path: '/carabeli',
+    name: 'carabeli',
+    component: CaraBeli,
+  }, 
+  {
+    path: '/panduanukuran',
+    name: 'PanduanUkuran',
+    component: PanduanUkuran,
+  }, 
+  {
+    path: '/retur',
+    name: 'retur',
+    component: Retur,
+  }, 
   {
     path: '/about',
     name: 'about',

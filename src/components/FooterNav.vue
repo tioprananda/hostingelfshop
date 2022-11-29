@@ -43,7 +43,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <router-link to="/panduan" class="nav-link"
+              <router-link to="/panduanukuran" class="nav-link"
                 ><span>Panduan Ukuran</span></router-link
               >
             </div>
