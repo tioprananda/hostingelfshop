@@ -1,11 +1,13 @@
 <template>
    
     <div class="card border-0 shadow mx-2">
-      <img
+       <router-link :to="'/product/'+productprop.id">
+        <img
         :src="'assets/pakaian/'+productprop.gambar"
         class="card-img-top"
         alt="..."
       />
+       </router-link> 
       <div class="card-body">
         <h6 class="card-title">{{productprop.nama}}</h6>
         <h5 class="card-subtitle">Rp. {{productprop.harga}}</h5>
