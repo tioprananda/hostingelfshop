@@ -5,6 +5,7 @@ import ProductView from '../views/ProductView.vue'
 import CaraBeli from '../components/FooterDetail/CaraBeli.vue'
 import PanduanUkuran from '../components/FooterDetail/PanduanUkuran.vue'
 import Retur from '../components/FooterDetail/Retur.vue'
+import Faq from '../components/FooterDetail/Faq.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/retur',
     name: 'retur',
     component: Retur,
+  }, 
+   {
+    path: '/faq',
+    name: 'faq',
+    component: Faq,
   }, 
   {
     path: '/about',
