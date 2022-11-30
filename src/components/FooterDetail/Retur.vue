@@ -1,5 +1,5 @@
 <template>
-  <div class="retur mb-5">
+  <div class="panduanUkuran mb-5">
     <Navbar />
     <div class="container mt-5">
       <div class="row mt-5">
@@ -43,7 +43,8 @@
             C. Pilih Solusi <br>
             <ul>
               <li>Datang ke toko elfs shop di greenlake city, cipondoh tangeran & langsung menukar
-        </li>
+        
+</li>
 <li>Mendapatkan diskon berupa cashback sehingga tidak perlu melakukan penukaran (untuk kesalahan yang dapat dimaklumi pembeli atau untuk pembeli yang berlokasi jauh dari jakarta), nilai cashback akan berbeda setiap kasusnya</li>
 <li>Penukaran produk dilakukan sama seperti diatas, namun seluruh ongkos kirim akan ditanggung elfs shop dan pembeli akan mendapatkan diskon 10% bilamana sekaligus menambah pesanan bersamaan dengan paket penukaran yang akan dikirim kembali</li>
             </ul>

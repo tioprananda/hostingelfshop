@@ -79,8 +79,6 @@ export default {
         this.cariproduct();
         console.log(this.caridata)
 			}
-    
-     
 		},
    
   },
