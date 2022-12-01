@@ -13,7 +13,7 @@
               </div>
                  
             </div>
-            <div class="col-md-5 mt-5">
+            <div class="col-md-5 mt-5 judulForm">
                 <h1>{{product.nama}}</h1>
                 <h3>Rp. {{product.harga}}</h3>
                   <div class="menu-detail mt-3">
@@ -66,25 +66,46 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
               <h6>Anda tidak yakin? Lihat Detail Ukuran</h6>
               <div class="row">
                 <div class="col">
-                  <form class="">
+                  <form v-on:submit.prevent>
                     <div class="form-group">
-                      <label for="ukuran">Ukuran</label>
-                      <select class="custom-select custom-select-sm">
-                        <option selected>Size S</option>
-                        <option value="1">30 Size M</option>
-                        <option value="2">Size L</option>
-                        <option value="3">Size XL</option>
-                    </select>
+                              <label for="ukuran">Ukuran</label>
+                              <select class="custom-select custom-select-sm" v-model="pesan.size">
+                                <option value="Size S" selected>Size S</option>
+                                <option value="30 Size M">30 Size M</option>
+                                <option value="Size L">Size L</option>
+                                <option value="Size XL">Size XL</option>
+                            </select>
+                          </div>
+                    <div class="form-group">
+                      <label for="jumlah">Jumlah Pemesanan</label>
+                      <input type="number" class="form-control" v-model="pesan.jumlah">
+                    </div>
+                    <b-button type="submit" align="center" class="btnSubmit" v-b-modal.modal-center @click="submitOrder">beli</b-button>
+                  </form>
+
+                  <!-- MODAL BOX -->
+                  <div>
+                    <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
+                      <div class="row itemKeranjang" v-for="item in checkout" :key="item.id">
+                            <div class="col-md-3 itemDetail">
+                            <div class="card border-0 shadow mx-2">
+                              <img
+                                :src="'../assets/pakaian/'+item.productOrder.gambar"
+                                class="card-img-top"
+                                alt="..."
+                              />
+                           </div>
+                        </div>
+                        <div class="col-md-9 itemDetail">
+                          <h4>{{item.productOrder.nama}}</h4>
+                          <h6>Ukuran : {{item.productOrder.size}}</h6>
+                          <h6>Harga Item : {{item.productOrder.harga}}</h6>
+                          <h6>Total Harga : {{(item.productOrder.harga * item.jumlah)}}</h6>
+                          </div>
+                        </div><hr>
+                    </b-modal>
                   </div>
-                
-                  <div class="form-group  ">
-                    <label for="exampleFormControlInput1">Jumlah</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="pcs">
-                  </div>
-                
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                 
-                </form>
+
                 </div>
               </div>
             </div>
@@ -107,15 +128,52 @@ export default {
 
   data: function () {
     return {
-      product: [],
+      checkout: ``,
+      product: ``,
       menu: `detail`,
+      pesan : [{
+        size : `Size S`,
+        jumlah : 1,
+        productOrder : [],
+      }]
     };
   },
 
   methods: {
+
+    submitOrder : function(){
+      if(this.pesan.jumlah){
+        this.pesan.productOrder = this.product;
+      axios
+      .post("http://localhost:3000/checkout",this.pesan)
+      .then(() => { 
+      // this.$router.push({ path : '/keranjang' })
+      this.$toast.success(`Pesanan ditambahkan ke keranjang`,{
+        duration : 3000,
+        message : `Pesanan berhasil ditambahkan`,
+        position : `top-right`,
+        dismissible : true,
+      });
+    })
+      .catch((error) => console.log("gagal : ", error));
+      }else{
+        this.$toast.error(`Jumlah pesanan harus diisi`,{
+        duration : 3000,
+        message : `Jumlah dan ukuran harus diisi`,
+        position : `top-right`,
+        dismissible : true,
+      })
+      }
+      // console.log(this.pesan)
+    },
+  
     setProduct: function (data) {
       this.product = data;
-      console.log(data);
+      // console.log(data);
+    },
+    setCheckout: function (data) {
+      this.checkout = data;
+      // console.log(this.checkout)
     },
     active: function (data) {
       // jika isi menu sama dengan data baru dari function active
@@ -134,16 +192,68 @@ export default {
     },
   },
 
+  computed : {
+      totalHarga: function () {
+      return this.checkout.reduce((acc, curr) => {
+        return acc + curr.productOrder.harga * curr.jumlah;
+      }, 0);
+    },
+  
+  },
+
   mounted() {
     axios
       .get("http://localhost:3000/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
+      .catch((error) => console.log("gagal : ", error));
+    axios
+      .get("http://localhost:3000/checkout")
+      .then((response) => this.setCheckout(response.data))
       .catch((error) => console.log("gagal : ", error));
   },
 };
 </script>
 
 <style scoped>
+.itemDetail {
+  border-bottom: 1px solid rgb(209, 209, 209);
+  padding: 5px;
+}
+
+.judulForm h3 {
+  font-size: 25px;
+  color: rgb(35, 129, 98);
+}
+
+.judulForm h1 {
+  font-size: 30px;
+}
+
+.btnSubmit {
+  padding: 5px;
+  font-size: 12px;
+  background-color: rgb(70, 135, 156);
+  color: white;
+  width: 210px;
+  text-align: center;
+  border: 0px solid transparent;
+}
+
+.btnSubmit:hover {
+  background: grey;
+}
+.classForm h4 {
+  font-size: 15px;
+}
+
+.classForm h6 {
+  font-size: 9px;
+}
+
+.classForm label {
+  font-size: 10px;
+}
+
 .btnEdit {
   margin: auto 10px;
   background-color: white;
@@ -159,6 +269,7 @@ export default {
 }
 
 .classForm {
+  width: 230px;
   padding: 10px;
   border: 1px solid rgb(204, 203, 203);
 }
