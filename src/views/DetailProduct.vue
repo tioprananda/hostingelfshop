@@ -86,7 +86,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                   <!-- MODAL BOX -->
                   <div>
                     <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
-                      <div class="row itemKeranjang" v-for="item in checkout" :key="item.id">
+                      <div class="row itemKeranjang" v-for="item in pesan" :key="item.id">
                             <div class="col-md-3 itemDetail">
                             <div class="card border-0 shadow mx-2">
                               <img
