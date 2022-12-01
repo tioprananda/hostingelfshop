@@ -365,9 +365,9 @@
   ],
   "checkout": [
     {
+      "jumlah": 1,
       "size": "Size S",
-      "jumlah": "9",
-      "productOrder": {
+      "products": {
         "id": 1,
         "kode": "topi",
         "nama": "Topi Hitam",
@@ -378,9 +378,9 @@
       "id": 1
     },
     {
-      "size": "Size S",
-      "jumlah": "1",
-      "productOrder": {
+      "jumlah": "4",
+      "size": "30 Size M",
+      "products": {
         "id": 1,
         "kode": "topi",
         "nama": "Topi Hitam",
@@ -391,9 +391,9 @@
       "id": 2
     },
     {
+      "jumlah": 1,
       "size": "Size S",
-      "jumlah": "1",
-      "productOrder": {
+      "products": {
         "id": 1,
         "kode": "topi",
         "nama": "Topi Hitam",
@@ -404,9 +404,9 @@
       "id": 3
     },
     {
-      "size": "",
-      "jumlah": "5",
-      "productOrder": {
+      "jumlah": 1,
+      "size": "Size S",
+      "products": {
         "id": 1,
         "kode": "topi",
         "nama": "Topi Hitam",
@@ -417,240 +417,108 @@
       "id": 4
     },
     {
-      "size": "",
-      "jumlah": "7",
-      "productOrder": {
-        "id": 1,
-        "kode": "topi",
-        "nama": "Topi Hitam",
-        "harga": 20000,
+      "jumlah": 1,
+      "size": "Size S",
+      "products": {
+        "id": 24,
+        "kode": "aksesoris",
+        "nama": "Liontin Naga Biru",
+        "harga": 30000,
         "is_ready": true,
-        "gambar": "2-5a2e8-3073_8716-t3073_116.jpg"
+        "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
       },
       "id": 5
     },
     {
+      "jumlah": 1,
       "size": "Size S",
-      "jumlah": "2",
-      "productOrder": {
-        "id": 1,
-        "kode": "topi",
-        "nama": "Topi Hitam",
-        "harga": 20000,
+      "products": {
+        "id": 24,
+        "kode": "aksesoris",
+        "nama": "Liontin Naga Biru",
+        "harga": 30000,
         "is_ready": true,
-        "gambar": "2-5a2e8-3073_8716-t3073_116.jpg"
+        "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
       },
       "id": 6
     },
     {
-      "size": "Size S",
-      "jumlah": "1",
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
+      "jumlah": "2",
+      "size": "Size XL",
+      "products": {
+        "id": 24,
+        "kode": "aksesoris",
+        "nama": "Liontin Naga Biru",
+        "harga": 30000,
         "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
+        "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
       },
       "id": 7
     },
     {
-      "size": "30 Size M",
-      "jumlah": "2",
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
+      "jumlah": "999",
+      "size": "Size XL",
+      "products": {
+        "id": 24,
+        "kode": "aksesoris",
+        "nama": "Liontin Naga Biru",
+        "harga": 30000,
         "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
+        "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
       },
       "id": 8
     },
     {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
+      "jumlah": "999",
+      "size": "Size XL",
+      "products": {
+        "id": 24,
+        "kode": "aksesoris",
+        "nama": "Liontin Naga Biru",
+        "harga": 30000,
         "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
+        "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
       },
       "id": 9
     },
     {
-      "size": "Size S",
       "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
+      "size": "Size S",
+      "products": {
+        "id": 23,
+        "kode": "aksesoris",
+        "nama": "Kacamata Aviator",
         "harga": 34000,
         "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
+        "gambar": "km4_aviator_6130_gd_1-95bef-3073_3071-t3073_116.jpg"
       },
       "id": 10
     },
     {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
+      "jumlah": "2",
+      "size": "Size XL",
+      "products": {
+        "id": 23,
+        "kode": "aksesoris",
+        "nama": "Kacamata Aviator",
         "harga": 34000,
         "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
+        "gambar": "km4_aviator_6130_gd_1-95bef-3073_3071-t3073_116.jpg"
       },
       "id": 11
     },
     {
-      "size": "Size S",
       "jumlah": 1,
-      "productOrder": {
-        "id": 3,
-        "kode": "kaoskaki",
-        "nama": "kaos kaki hitam",
-        "harga": 12000,
+      "size": "Size L",
+      "products": {
+        "id": 23,
+        "kode": "aksesoris",
+        "nama": "Kacamata Aviator",
+        "harga": 34000,
         "is_ready": true,
-        "gambar": "capture1235-102be-3073_8033-t3073_116.jpg"
+        "gambar": "km4_aviator_6130_gd_1-95bef-3073_3071-t3073_116.jpg"
       },
       "id": 12
-    },
-    {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 15,
-        "kode": "tas",
-        "nama": "Tas Monol",
-        "harga": 37000,
-        "is_ready": true,
-        "gambar": "gb_monol_dot_wangi_ct-a8dec-3073_11220-t3073_116.jpg"
-      },
-      "id": 13
-    },
-    {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 15,
-        "kode": "tas",
-        "nama": "Tas Monol",
-        "harga": 37000,
-        "is_ready": true,
-        "gambar": "gb_monol_dot_wangi_ct-a8dec-3073_11220-t3073_116.jpg"
-      },
-      "id": 14
-    },
-    {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
-        "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
-      },
-      "id": 15
-    },
-    {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
-        "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
-      },
-      "id": 16
-    },
-    {
-      "size": "Size L",
-      "jumlah": "18",
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
-        "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
-      },
-      "id": 17
-    },
-    {
-      "size": "Size L",
-      "jumlah": "18",
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
-        "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
-      },
-      "id": 18
-    },
-    {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
-        "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
-      },
-      "id": 19
-    },
-    {
-      "size": "Size S",
-      "jumlah": 1,
-      "productOrder": {
-        "id": 39,
-        "kode": "tas",
-        "nama": "Tas Pocket",
-        "harga": 34000,
-        "is_ready": true,
-        "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
-      },
-      "id": 20
-    },
-    [
-      {
-        "size": "Size S",
-        "jumlah": 1,
-        "productOrder": []
-      }
-    ],
-    [
-      {
-        "size": "Size S",
-        "jumlah": 1,
-        "productOrder": []
-      }
-    ],
-    [
-      {
-        "size": "Size S",
-        "jumlah": 1,
-        "productOrder": []
-      }
-    ],
-    [
-      {
-        "size": "Size S",
-        "jumlah": 1,
-        "productOrder": []
-      }
-    ]
+    }
   ]
 }

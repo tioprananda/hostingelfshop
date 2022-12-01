@@ -86,23 +86,42 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                   <!-- MODAL BOX -->
                   <div>
                     <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
-                      <div class="row itemKeranjang" v-for="item in pesan" :key="item.id">
+                      <div class="row itemKeranjang" v-for="item in checkoutBag" :key="item.id">
                             <div class="col-md-3 itemDetail">
                             <div class="card border-0 shadow mx-2">
                               <img
-                                :src="'../assets/pakaian/'+item.productOrder.gambar"
+                                :src="'../assets/pakaian/'+item.products.gambar"
                                 class="card-img-top"
                                 alt="..."
                               />
                            </div>
                         </div>
                         <div class="col-md-9 itemDetail">
-                          <h4>{{item.productOrder.nama}}</h4>
-                          <h6>Ukuran : {{item.productOrder.size}}</h6>
-                          <h6>Harga Item : {{item.productOrder.harga}}</h6>
-                          <h6>Total Harga : {{(item.productOrder.harga * item.jumlah)}}</h6>
+                          <h4>{{item.products.nama}}</h4>
+                          <h6>Ukuran : {{item.size}}</h6>
+                          <h6>Harga/Item : Rp. {{item.products.harga}}</h6>
+                          <h6>Harga/Total : Rp. {{(item.products.harga * item.jumlah)}}</h6>
+                          
+                          <!-- MODAL BOX KECIL
+                          <form class="formCustom" v-on:submit.prevent>
+                    <div class="form-group">
+                              <select class="inputCustom" placeholder="Ubah Size">
+                                <option value="Size S" selected>Size S</option>
+                                <option value="30 Size M">30 Size M</option>
+                                <option value="Size L">Size L</option>
+                                <option value="Size XL">Size XL</option>
+                            </select>
                           </div>
-                        </div><hr>
+                    <div class="form-group">
+                      <input type="number" class="inputCustom" placeholder="Ubah Jumlah">
+                    </div>
+                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="submitUbah">Ubah</b-button>
+                    <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="submitHapus ">Hapus</b-button>
+                  </form> -->
+
+                          </div>
+                        </div>
+                        <h5 class="totalBelanja"><strong>Total Belanja ({{checkoutBag.length}} pcs) : Rp. {{totalHarga}}</strong></h5>
                     </b-modal>
                   </div>
 
@@ -128,22 +147,26 @@ export default {
 
   data: function () {
     return {
-      checkout: ``,
+    
+      checkoutBag: [],
       product: ``,
+      pesan : {
+        jumlah:1,
+        size:`Size S`,
+        products:[],
+      },
+
+
       menu: `detail`,
-      pesan : [{
-        size : `Size S`,
-        jumlah : 1,
-        productOrder : [],
-      }]
+      
     };
   },
 
   methods: {
 
-    submitOrder : function(){
+    submitOrder : function (){
       if(this.pesan.jumlah){
-        this.pesan.productOrder = this.product;
+        this.pesan.products = this.product;
       axios
       .post("http://localhost:3000/checkout",this.pesan)
       .then(() => { 
@@ -159,21 +182,22 @@ export default {
       }else{
         this.$toast.error(`Jumlah pesanan harus diisi`,{
         duration : 3000,
-        message : `Jumlah dan ukuran harus diisi`,
+        message : `Jumlah pesanan harus diisi`,
         position : `top-right`,
         dismissible : true,
       })
       }
-      // console.log(this.pesan)
+      console.log(this.pesan)
     },
   
+    setCheckout: function (data) {
+      this.checkoutBag = data;;
+      console.log(this.checkoutBag)
+    },
+
     setProduct: function (data) {
       this.product = data;
       // console.log(data);
-    },
-    setCheckout: function (data) {
-      this.checkout = data;
-      // console.log(this.checkout)
     },
     active: function (data) {
       // jika isi menu sama dengan data baru dari function active
@@ -194,8 +218,8 @@ export default {
 
   computed : {
       totalHarga: function () {
-      return this.checkout.reduce((acc, curr) => {
-        return acc + curr.productOrder.harga * curr.jumlah;
+      return this.checkoutBag.reduce((acc, curr) => {
+        return acc + curr.products.harga * curr.jumlah;
       }, 0);
     },
   
@@ -206,15 +230,54 @@ export default {
       .get("http://localhost:3000/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("gagal : ", error));
-    axios
+      axios
       .get("http://localhost:3000/checkout")
       .then((response) => this.setCheckout(response.data))
-      .catch((error) => console.log("gagal : ", error));
+      .catch((error) => console.log("gagal : ", error));  
   },
 };
 </script>
 
 <style scoped>
+.btnUbah {
+  background-color: rgb(230, 208, 19);
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  /* margin: 5px auto; */
+}
+
+.btnHapus {
+  background-color: rgb(230, 19, 19);
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  /* margin: 5px auto; */
+}
+  
+
+.formCustom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inputCustom {
+  border-radius: 5px;
+  background-color: transparent;
+  /* margin: 5px; */
+  text-align: center;
+  display: flex;
+  border: 1px solid grey;
+  width: 100px;
+  height: 40px;
+}
+
+.totalBelanja  {
+  text-align: center;
+  color: rgb(35, 129, 98);
+  display: block;
+  margin-top: 30px;
+}
 .itemDetail {
   border-bottom: 1px solid rgb(209, 209, 209);
   padding: 5px;
