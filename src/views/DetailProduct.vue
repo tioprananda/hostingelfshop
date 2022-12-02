@@ -6,12 +6,11 @@
             <div class="col-md-4 mt-5">
               <div class="card border-0 shadow mx-2">
                 <img
-        :src="'../assets/pakaian/'+product.gambar"
-        class="card-img-top"
-        alt="..."
-      />
+                  :src="'../assets/pakaian/'+product.gambar"
+                  class="card-img-top"
+                  alt="..."
+                />
               </div>
-                 
             </div>
             <div class="col-md-5 mt-5 judulForm">
                 <h1>{{product.nama}}</h1>
@@ -105,7 +104,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                           
                           <!-- MODAL BOX KECIL -->
                           <form class="formCustom" v-on:submit.prevent>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                               <select class="inputCustom" placeholder="Ubah Size">
                                 <option value="Size S" selected>Size S</option>
                                 <option value="30 Size M">30 Size M</option>
@@ -116,7 +115,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                     <div class="form-group">
                       <input type="number" class="inputCustom" placeholder="Ubah Jumlah">
                     </div>
-                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item)">Ubah</b-button> -->
+                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item)">Ubah</b-button>
                     <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="hapusKeranjang(item.id)">Hapus</b-button>
                   </form>
 
@@ -148,7 +147,6 @@ export default {
 
   data: function () {
     return {
-    
       checkoutBag: [],
       product: ``,
       pesan : {
@@ -156,15 +154,11 @@ export default {
         size:`Size S`,
         products:[],
       },
-
-
       menu: `detail`,
-      
     };
   },
-
   methods: {
-   
+  
     hapusKeranjang: function (id) {
       // axios hapus data
       axios
@@ -209,7 +203,11 @@ export default {
         dismissible : true,
       })
       }
-      // console.log(this.pesan)
+    //  setelah post axios, data checkout akan langsung ditampilkan
+      axios
+      .get("http://localhost:3000/checkout")
+      .then((response) => this.setCheckout(response.data))
+      .catch((error) => console.log("gagal : ", error));  
     },
   
     setCheckout: function (data) {
@@ -237,14 +235,12 @@ export default {
       }
     },
   },
-
   computed : {
       totalHarga: function () {
       return this.checkoutBag.reduce((acc, curr) => {
         return acc + curr.products.harga * curr.jumlah;
       }, 0);
     },
-  
   },
 
   mounted() {
@@ -252,10 +248,12 @@ export default {
       .get("http://localhost:3000/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("gagal : ", error));
+
       axios
-      .get("http://localhost:3000/checkout")
-      .then((response) => this.setCheckout(response.data))
-      .catch((error) => console.log("gagal : ", error));  
+            .get("http://localhost:3000/checkout")
+            .then((response) => this.setCheckout(response.data))
+            .catch((error) => console.log("gagal : ", error));
+ 
   },
 };
 </script>
