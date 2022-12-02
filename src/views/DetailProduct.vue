@@ -99,25 +99,26 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                         <div class="col-md-9 itemDetail">
                           <h4>{{item.products.nama}}</h4>
                           <h6>Ukuran : {{item.size}}</h6>
+                          <h6>Jumlah : {{item.jumlah}}</h6>
                           <h6>Harga/Item : Rp. {{item.products.harga}}</h6>
                           <h6>Harga/Total : Rp. {{(item.products.harga * item.jumlah)}}</h6>
                           
-                          <!-- MODAL BOX KECIL
+                          <!-- MODAL BOX KECIL -->
                           <form class="formCustom" v-on:submit.prevent>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                               <select class="inputCustom" placeholder="Ubah Size">
                                 <option value="Size S" selected>Size S</option>
                                 <option value="30 Size M">30 Size M</option>
                                 <option value="Size L">Size L</option>
                                 <option value="Size XL">Size XL</option>
                             </select>
-                          </div>
+                    </div>
                     <div class="form-group">
                       <input type="number" class="inputCustom" placeholder="Ubah Jumlah">
                     </div>
-                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="submitUbah">Ubah</b-button>
-                    <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="submitHapus ">Hapus</b-button>
-                  </form> -->
+                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item)">Ubah</b-button> -->
+                    <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="hapusKeranjang(item.id)">Hapus</b-button>
+                  </form>
 
                           </div>
                         </div>
@@ -163,6 +164,27 @@ export default {
   },
 
   methods: {
+   
+    hapusKeranjang: function (id) {
+      // axios hapus data
+      axios
+        .delete("http://localhost:3000/checkout/" + id)
+        .then(() => {
+          this.$toast.success(`Pesanan berhasil dihapus`, {
+            duration: 3000,
+            message: `Pesanan berhasil dihapus`,
+            position: `top-right`,
+            dismissible: true,
+          });
+          // setelah dihapus, panggil kembali data yg tersisa
+          axios
+            .get("http://localhost:3000/checkout")
+            .then((response) => this.setCheckout(response.data))
+            .catch((error) => console.log("gagal : ", error));
+        })
+        // axios gagal mengambil data
+        .catch((error) => console.log("gagal : ", error));
+    },
 
     submitOrder : function (){
       if(this.pesan.jumlah){
@@ -187,12 +209,12 @@ export default {
         dismissible : true,
       })
       }
-      console.log(this.pesan)
+      // console.log(this.pesan)
     },
   
     setCheckout: function (data) {
       this.checkoutBag = data;;
-      console.log(this.checkoutBag)
+      // console.log(this.checkoutBag)
     },
 
     setProduct: function (data) {
