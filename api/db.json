@@ -363,32 +363,5 @@
       "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "checkout": [
-    {
-      "jumlah": "90",
-      "size": "Size L",
-      "products": {
-        "id": 14,
-        "kode": "kaoskaki",
-        "nama": "Kaos Kaki Pendek",
-        "harga": 13000,
-        "is_ready": true,
-        "gambar": "edit-37e23-3073_5623-t3073_116.jpg"
-      },
-      "id": 1
-    },
-    {
-      "jumlah": "9",
-      "size": "Size XL",
-      "products": {
-        "id": 34,
-        "kode": "topi",
-        "nama": "Topi Basic Twill",
-        "harga": 18000,
-        "is_ready": true,
-        "gambar": "to3_basic_twill_corona_vs_indonesia_px1-7d945-3073_10245-t3073_116.jpg"
-      },
-      "id": 2
-    }
-  ]
+  "checkout": []
 }

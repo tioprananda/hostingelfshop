@@ -105,7 +105,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                           <!-- MODAL BOX KECIL -->
                           <form class="formCustom" v-on:submit.prevent>
                     <div class="form-group">
-                              <select class="inputCustom" placeholder="Ubah Size">
+                              <select class="inputCustom" placeholder="Ubah Size" v-model="item.size">
                                 <option value="Size S" selected>Size S</option>
                                 <option value="30 Size M">30 Size M</option>
                                 <option value="Size L">Size L</option>
@@ -113,9 +113,9 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                             </select>
                     </div>
                     <div class="form-group">
-                      <input type="number" class="inputCustom" placeholder="Ubah Jumlah">
+                      <input type="number" class="inputCustom" placeholder="Ubah Jumlah" v-model="item.jumlah">
                     </div>
-                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item)">Ubah</b-button>
+                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item.id, item)">Ubah</b-button>
                     <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="hapusKeranjang(item.id)">Hapus</b-button>
                   </form>
 
@@ -150,6 +150,7 @@ export default {
       checkoutBag: [],
       product: ``,
       pesan : {
+        id:``,
         jumlah:1,
         size:`Size S`,
         products:[],
@@ -157,7 +158,44 @@ export default {
       menu: `detail`,
     };
   },
+
   methods: {
+
+
+
+    ubahKeranjang: function (id, item) {
+      axios
+      .put("http://localhost:3000/checkout/"+id,
+      {
+        id : item.id,
+        jumlah: item.jumlah,
+        size : item.size,
+        products: {
+          id: item.products.id,
+          kode: item.products.kode,
+          nama: item.products.nama,
+          harga: item.products.harga,
+          is_ready: item.products.is_ready,
+          gambar: item.products.gambar,
+        },
+      })
+      .then(() => { 
+      // this.$router.push({ path : '/keranjang' })
+      this.$toast.success(`Pesanan ditambahkan ke keranjang`,{
+        duration : 3000,
+        message : `Pesanan berhasil ditambahkan`,
+        position : `top-right`,
+        dismissible : true,
+      })
+        //  setelah post axios, data checkout akan langsung ditampilkan
+        axios
+      .get("http://localhost:3000/checkout")
+      .then((response) => this.setCheckout(response.data))
+      .catch((error) => console.log("gagal : ", error));  
+    })
+      .catch((error) => console.log("gagal : ", error));
+     
+    },
   
     hapusKeranjang: function (id) {
       // axios hapus data
@@ -192,7 +230,12 @@ export default {
         message : `Pesanan berhasil ditambahkan`,
         position : `top-right`,
         dismissible : true,
-      });
+      })
+        //  setelah post axios, data checkout akan langsung ditampilkan
+        axios
+      .get("http://localhost:3000/checkout")
+      .then((response) => this.setCheckout(response.data))
+      .catch((error) => console.log("gagal : ", error));  
     })
       .catch((error) => console.log("gagal : ", error));
       }else{
@@ -203,11 +246,7 @@ export default {
         dismissible : true,
       })
       }
-    //  setelah post axios, data checkout akan langsung ditampilkan
-      axios
-      .get("http://localhost:3000/checkout")
-      .then((response) => this.setCheckout(response.data))
-      .catch((error) => console.log("gagal : ", error));  
+  
     },
   
     setCheckout: function (data) {
