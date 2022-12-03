@@ -17,7 +17,7 @@
           <b-nav-item>
             <router-link to="/login" class="nav-link"><b-icon-people /> Login</router-link>
           </b-nav-item>
-          <b-nav-item>
+          <!-- <b-nav-item>
             <b-button type="submit" align="center" class="btnSubmit nav-link" v-b-modal.modal-center><b-icon-cart/> Item</b-button>
                    <div>
                     <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
@@ -37,7 +37,7 @@
                       </div>
                     </b-modal>
                   </div> 
-          </b-nav-item>
+          </b-nav-item> -->
         </b-navbar-nav>
         <!-- @keyup.enter="$emit('tambah',$event)" -->
         <!-- v-on:submit.prevent="submitproses" -->
