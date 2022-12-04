@@ -363,5 +363,32 @@
       "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "checkout": []
+  "checkout": [
+    {
+      "id": 1,
+      "jumlah": "2",
+      "size": "Size S",
+      "products": {
+        "id": 8,
+        "kode": "celana",
+        "nama": "Chino Cropped",
+        "harga": 79000,
+        "is_ready": true,
+        "gambar": "cjb_chino_cropped_simple_cm1-41ad5-3073_8443-t3073_116.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "jumlah": "2",
+      "size": "Size XL",
+      "products": {
+        "id": 16,
+        "kode": "baju",
+        "nama": "Batik Katun",
+        "harga": 59000,
+        "is_ready": true,
+        "gambar": "kfbd_batik_katun_5e17010_hx_1-4bcdf-3073_3144-t3073_116.jpg"
+      }
+    }
+  ]
 }
