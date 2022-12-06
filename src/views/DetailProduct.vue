@@ -1,6 +1,6 @@
 <template>
   <div class="detailProduct">
-    <Navbar/>
+    <Navbar :checkoutBagProps="checkoutBag" :totalHargaProps="totalHarga" v-on:ubahproses="ubahEmitModal"/>
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-4 mt-5">
@@ -82,9 +82,6 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                     <b-button type="submit" align="center" class="btnSubmit" v-b-modal.modal-center @click="submitOrder">beli</b-button>
                   </form>
 
-                  <!-- MODAL BOX -->
-                  <ModalDetail :checkoutBagProps="checkoutBag" :totalHargaProps="totalHarga" v-on:ubahproses="ubahEmitModal"></ModalDetail>
-
                 </div>
               </div>
             </div>
@@ -97,14 +94,12 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-import ModalDetail from "@/components/ModalDetail.vue";
 import axios from "axios";
 
 export default {
   name: "DetailProduct",
   components: {
     Navbar,
-    ModalDetail,
   },
 
   data: function () {

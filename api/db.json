@@ -366,28 +366,15 @@
   "checkout": [
     {
       "id": 1,
-      "jumlah": "2",
-      "size": "Size S",
-      "products": {
-        "id": 8,
-        "kode": "celana",
-        "nama": "Chino Cropped",
-        "harga": 79000,
-        "is_ready": true,
-        "gambar": "cjb_chino_cropped_simple_cm1-41ad5-3073_8443-t3073_116.jpg"
-      }
-    },
-    {
-      "id": 2,
-      "jumlah": "2",
+      "jumlah": "9",
       "size": "Size XL",
       "products": {
-        "id": 16,
+        "id": 29,
         "kode": "baju",
-        "nama": "Batik Katun",
-        "harga": 59000,
+        "nama": "Kaos Neck Ungu",
+        "harga": 35000,
         "is_ready": true,
-        "gambar": "kfbd_batik_katun_5e17010_hx_1-4bcdf-3073_3144-t3073_116.jpg"
+        "gambar": "pl_neck_hitam_um1-a0d67-3073_11063-t3073_116.jpg"
       }
     }
   ]
