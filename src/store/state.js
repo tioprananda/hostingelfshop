@@ -5,4 +5,9 @@ export default {
 
     // productview
     dataSearchProduct: [],
+  
+    // navbar, productview
+    caridata : ``,
+    dataSearch : ``,
+    menu : ``,
 }

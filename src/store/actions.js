@@ -27,4 +27,9 @@ export const searchProduct = ({commit}, dataSearch) => {
     commit(`SEARCH_PRODUCT`, response.data)
   })
   .catch((error) => console.log("gagal : ", error));
+};
+
+// navbar
+export const submitproses = ({commit}, e) => {
+  commit(`SUBMIT_PROSES`, e);
 }

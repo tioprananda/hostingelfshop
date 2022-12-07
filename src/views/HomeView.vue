@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <router-link to="/product"><Navbar></Navbar></router-link>
+    <Navbar></Navbar>
 
     <div class="container">
-      <div class="row mt-5">
-        <div class="col mt-5">
+      <div class="row">
+        <div class="col mt-3">
           <div
             id="carouselExampleSlidesOnly"
             class="carousel slide"

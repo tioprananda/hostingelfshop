@@ -32,7 +32,26 @@
           </form>
       </b-collapse>
     </b-navbar>
+
+    <!-- BUTTON NAVIGASI -->
+    <div class="container mt-5">
+      <div class="row mt-5">
+        <div class="col mt-5">
+          <ul class="nav justify-content-center">
+            <li class="nav-item mt-2">
+                <button type="button" class="btnEdit" :class="{active:active(``)}" @click = "buttonActive(``)"><b-icon-filter/> Semua</button>
+                <button type="button" class="btnEdit" :class="{active:active(`baju`)}" @click = "buttonActive(`baju`)">Baju</button>
+                <button type="button" class="btnEdit" :class="{active:active(`celana`)}" @click = "buttonActive(`celana`)">Celana</button>
+                <button type="button" class="btnEdit" :class="{active:active(`tas`)}" @click = "buttonActive(`tas`)">Tas</button>
+                <button type="button" class="btnEdit" :class="{active:active(`kaoskaki`)}" @click = "buttonActive(`kaoskaki`)">Kaos Kaki</button>
+                <button type="button" class="btnEdit" :class="{active:active(`topi`)}" @click = "buttonActive(`topi`)">Topi</button>
+                <button type="button" class="btnEdit" :class="{active:active(`aksesoris`)}" @click = "buttonActive(`aksesoris`)">Aksesoris</button>
+            </li>
+          </ul><hr>
+        </div>
+      </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -40,19 +59,70 @@ export default {
   name: `Navbar`,
   data: function(){
     return {
+      menu : ``,
+      caridata : ``,
       dataSearch : ``,
     }
   },
+
+  computed : {
+    dataSearchProduct : function () {
+      return this.$store.state.dataSearchProduct;  
+    },
+    // caridata : function () {
+    //   return this.$store.state.caridata;  
+    // },
+    // dataSearch : function () {
+    //   return this.$store.state.dataSearch;  
+    // },
+    // menu : function () {
+    //   return this.$store.state.menu;  
+    // },
+  
+  },
   methods : {
   submitproses : function(e){
-    let kirimMouse = this.dataSearch;
-    let kirimKeyboard = e.target.value;
-    if(kirimMouse || kirimKeyboard === true){
-        this.$emit('submitproses',this.dataSearch);
-        this.dataSearch = "";
-    }
+  //  this.$store.dispatch(`submitproses`,e);
+  let kirimMouse = this.dataSearch;
+     let kirimKeyboard = e.target.value;
+     if(kirimMouse || kirimKeyboard === true){
+         this.tambahEmit(this.dataSearch);
+         this.dataSearch = "";
+     }
   },
-  }
+  tambahEmit: function(event){
+    
+      let dataCari = event;
+      this.caridata = dataCari;
+      this.cariproduct();
+      // console.log(event)
+    },
+    cariproduct : function(){
+      this.$store.dispatch(`searchProduct`,this.caridata);
+    },
+    active : function(data) {
+			// jika isi menu sama dengan data baru dari function active
+			if (this.menu === data) {
+				// kembalikan isi function berupa true
+				return true;
+			}
+    },
+    buttonActive : function(dataButton){
+      // this.$router.push({ path : '/keranjang' })
+			// jika data menu sama dengan data menu
+			if (this.menu === this.menu) {
+        // console.log(dataButton)
+				// ubah data menu menjadi data baru dari parameter function button active
+				this.menu = dataButton;
+        this.caridata = this.menu;
+        this.cariproduct();
+        console.log(this.caridata)
+			}
+		},
+  },
+  mounted(){
+    this.$store.dispatch(`searchProduct`,this.caridata);
+  },
 };
 </script>
 
@@ -64,5 +134,22 @@ export default {
 .btnSubmit {
   background-color: transparent;
   border : 0px solid transparent;
+}
+
+.btnEdit {
+    margin: auto 10px;
+    background-color: white;
+    border: none;
+}
+
+.btnEdit.active {
+    border: none;
+    color: rgba(17, 175, 175, 0.678);
+
+}
+
+.btnEdit:hover {
+   color :rgb(109, 211, 177);
+   transition: .4s;
 }
 </style>
