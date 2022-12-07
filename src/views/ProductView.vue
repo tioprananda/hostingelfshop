@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="row">
-        <ul class="col-md-3 nav justify-content-center" v-for="item in product" :key="item.id" >
+        <ul class="col-md-3 nav justify-content-center" v-for="item in dataSearchProduct" :key="item.id" >
             <li class="nav-item"><CardProduct :productprop="item"></CardProduct></li>
         </ul>
       </div>
@@ -28,7 +28,6 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-import axios from "axios";
 import CardProduct from "@/components/CardProduct.vue";
 
 export default {
@@ -40,16 +39,17 @@ export default {
   data:function(){
     return{
       menu : ``,
-      product: [],
       caridata : ``,
       // dataCari : '',
     }
   },
+  computed : {
+    dataSearchProduct : function () {
+      return this.$store.state.dataSearchProduct;  
+    }
+  },
   methods : {
-    setProduct: function (data) {     
-      this.product = data;
-      // console.log(this.product)
-    },
+    
     tambahEmit: function(event){
       let dataCari = event;
       this.caridata = dataCari;
@@ -57,10 +57,7 @@ export default {
       // console.log(event)
     },
     cariproduct : function(){
-      axios
-      .get("http://localhost:3000/products?q="+this.caridata)
-      .then((response) => this.setProduct(response.data))
-      .catch((error) => console.log("gagal : ", error));
+      this.$store.dispatch(`searchProduct`,this.caridata);
     },
     active : function(data) {
 			// jika isi menu sama dengan data baru dari function active
@@ -83,10 +80,8 @@ export default {
    
   },
   mounted(){
-    axios
-      .get("http://localhost:3000/products?q="+this.caridata)
-      .then((response) => this.setProduct(response.data))
-      .catch((error) => console.log("gagal : ", error));
+    this.$store.dispatch(`searchProduct`,this.caridata);
+    
   }
 };
 </script>

@@ -17,30 +17,7 @@
           <b-nav-item>
             <router-link to="/login" class="nav-link"><b-icon-people /> Login</router-link>
           </b-nav-item>
-          <!-- <b-nav-item>
-            <b-button type="submit" align="center" class="btnSubmit nav-link" v-b-modal.modal-center><b-icon-cart/> Item</b-button>
-                   <div>
-                    <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
-                      <div class="row">
-                        <div class="col-md-3">
-                            <div class="card border-0 shadow mx-2">
-                              <img
-                      src="'../assets/pakaian/'"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                          
-                        </div>
-                      </div>
-                    </b-modal>
-                  </div> 
-          </b-nav-item> -->
         </b-navbar-nav>
-        <!-- @keyup.enter="$emit('tambah',$event)" -->
-        <!-- v-on:submit.prevent="submitproses" -->
         <form class="d-flex ml-auto" role="search" v-on:submit.prevent="submitproses">
             <input
             @keyup.enter="submitproses"

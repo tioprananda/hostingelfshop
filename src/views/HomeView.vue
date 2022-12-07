@@ -24,7 +24,7 @@
       </div>
       <div class="row mt-4">
         <div class="col-md-6">
-          <router-link to="/products">
+          <router-link to="/product">
             <img
               src="../assets/banner-kecil-1.jpg"
               class="d-block w-100"
@@ -33,7 +33,7 @@
           </router-link>
         </div>
         <div class="col-md-6">
-          <router-link to="/products">
+          <router-link to="/product">
             <img
               src="../assets/banner-kecil-2.jpg"
               class="d-block w-100"
@@ -90,35 +90,32 @@ export default {
     CardProduct,
     Carousel,
     Slide,
-
     // HelloWorld
   },
 
   data: function () {
     return {
-      product: [],
-      dataBestProduct: [],
+    
     };
   },
 
   methods: {
-    setProduct: function (data) {     
-      this.product = data;
+  
+  },
+
+  computed : {
+    product : function () {
+      return this.$store.state.product;
     },
-    bestProduct : function (data) {
-      this.dataBestProduct = data;
+    dataBestProduct : function () {
+      return this.$store.state.dataBestProduct;
     }
   },
 
   mounted() {
-    axios
-      .get("http://localhost:3000/products")
-      .then((response) => this.setProduct(response.data))
-      .catch((error) => console.log("gagal : ", error));
-    axios
-      .get("http://localhost:3000/best-products")
-      .then((response) => this.bestProduct(response.data))
-      .catch((error) => console.log("gagal : ", error));
+   
+      this.$store.dispatch('setProduct');
+      this.$store.dispatch(`bestProduct`);
   },
   
   
