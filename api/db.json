@@ -363,19 +363,5 @@
       "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "checkout": [
-    {
-      "id": 1,
-      "jumlah": "9",
-      "size": "Size XL",
-      "products": {
-        "id": 29,
-        "kode": "baju",
-        "nama": "Kaos Neck Ungu",
-        "harga": 35000,
-        "is_ready": true,
-        "gambar": "pl_neck_hitam_um1-a0d67-3073_11063-t3073_116.jpg"
-      }
-    }
-  ]
+  "checkout": []
 }

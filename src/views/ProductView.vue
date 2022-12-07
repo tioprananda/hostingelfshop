@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <Navbar class="mb-5" v-on:submitproses="tambahEmit"></Navbar>
+    <Navbar class="mb-5"  v-on:submitproses="tambahEmit"></Navbar>
     <div class="container mt-5 mb-5">
       <div class="row mt-5">
         <div class="col mt-5">
