@@ -1,91 +1,231 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
-      <b-navbar-brand><router-link to="/"><img src="../assets/logoelfs.png" alt=""></router-link></b-navbar-brand>
+      <b-navbar-brand
+        ><router-link to="/"
+          ><img src="../assets/logoelfs.png" alt="" /></router-link
+      ></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="d-flex mr-auto">
           <b-nav-item>
-            <router-link to="/" class="nav-link"><b-icon-house /> Home</router-link>
+            <router-link to="/" class="nav-link"
+              ><b-icon-house /> Home</router-link
+            >
           </b-nav-item>
           <b-nav-item>
-            <router-link to="/product" class="nav-link"><b-icon-card-checklist /> Products</router-link>
+            <router-link to="/product" class="nav-link"
+              ><b-icon-card-checklist /> Products</router-link
+            >
           </b-nav-item>
           <b-nav-item>
-            <router-link to="/konfirmasi-pembayaran" class="nav-link"><b-icon-credit-card /> Pembayaran</router-link>
+            <router-link to="/konfirmasi-pembayaran" class="nav-link"
+              ><b-icon-credit-card /> Pembayaran</router-link
+            >
           </b-nav-item>
           <b-nav-item>
-            <router-link to="/login" class="nav-link"><b-icon-people /> Login</router-link>
+            <router-link to="/login" class="nav-link"
+              ><b-icon-people /> Login</router-link
+            >
           </b-nav-item>
-          <!-- <b-nav-item>
-            <b-button type="submit" align="center" class="btnSubmit nav-link" v-b-modal.modal-center><b-icon-cart/> Item</b-button>
-                   <div>
-                    <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
-                      <div class="row">
-                        <div class="col-md-3">
-                            <div class="card border-0 shadow mx-2">
-                              <img
-                      src="'../assets/pakaian/'"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                          
-                        </div>
-                      </div>
-                    </b-modal>
-                  </div> 
-          </b-nav-item> -->
         </b-navbar-nav>
-        <!-- @keyup.enter="$emit('tambah',$event)" -->
-        <!-- v-on:submit.prevent="submitproses" -->
-        <form class="d-flex ml-auto" role="search" v-on:submit.prevent="submitproses">
-            <input
+        <form 
+          class="d-flex ml-auto"
+          role="search"
+          v-on:submit.prevent="submitproses"
+        >
+          <input
             @keyup.enter="submitproses"
             v-model="dataSearch"
-              class="form-control me-2"
-              type="text"
-              placeholder="Search" 
-              aria-label="Search"/>
-            <button class="btn btn-dark" type="submit">
-              <b-icon-search />
-            </button>
-          </form>
+            class="form-control me-2"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-dark" type="submit">
+            <b-icon-search />
+          </button>
+        </form>
       </b-collapse>
     </b-navbar>
+
+    <!-- BUTTON NAVIGASI -->
+    <div class="container mt-5">
+      <div class="row mt-5">
+        <div class="col mt-5">
+          <ul class="nav justify-content-center">
+            <li class="nav-item mt-2">
+              <router-link to="/product"
+                ><button
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(``) }"
+                  @click="buttonActive(``)"
+                >
+                  <b-icon-filter /> Semua
+                </button></router-link
+              >
+              <router-link to="/product"
+                ><button
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(`baju`) }"
+                  @click="buttonActive(`baju`)"
+                >
+                  Baju
+                </button></router-link
+              >
+              <router-link to="/product">
+                <button
+                type="button"
+                class="btnEdit"
+                :class="{ active: active(`celana`) }"
+                @click="buttonActive(`celana`)"
+              >
+                Celana
+              </button>
+              </router-link>
+
+              <router-link to="/product">
+                <button
+                type="button"
+                class="btnEdit"
+                :class="{ active: active(`tas`) }"
+                @click="buttonActive(`tas`)"
+              >
+                Tas
+              </button>
+              </router-link>
+              <router-link to="/product">
+                <button
+                type="button"
+                class="btnEdit"
+                :class="{ active: active(`kaoskaki`) }"
+                @click="buttonActive(`kaoskaki`)"
+              >
+                Kaos Kaki
+              </button>
+              </router-link>
+              <router-link to="/product"><button
+                type="button"
+                class="btnEdit"
+                :class="{ active: active(`topi`) }"
+                @click="buttonActive(`topi`)"
+              >
+                Topi
+              </button></router-link>
+              <router-link to="/product">
+                <button
+                type="button"
+                class="btnEdit"
+                :class="{ active: active(`aksesoris`) }"
+                @click="buttonActive(`aksesoris`)"
+              >
+                Aksesoris
+              </button>
+              </router-link>
+              
+            </li>
+          </ul>
+          <hr />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: `Navbar`,
-  data: function(){
+  data: function () {
     return {
-      dataSearch : ``,
-    }
+      menu: ``,
+      caridata: ``,
+      dataSearch: ``,
+    };
   },
-  methods : {
-  submitproses : function(e){
-    let kirimMouse = this.dataSearch;
-    let kirimKeyboard = e.target.value;
-    if(kirimMouse || kirimKeyboard === true){
-        this.$emit('submitproses',this.dataSearch);
+
+  computed: {
+    dataSearchProduct: function () {
+      return this.$store.state.dataSearchProduct;
+    },
+  },
+
+  methods: {
+    routeProduct: function () {
+      this.$router.push({ path: "/product" });
+    },
+
+    submitproses: function (e) {
+      this.routeProduct();
+      //  this.$store.dispatch(`submitproses`,e);
+      let kirimMouse = this.dataSearch;
+      let kirimKeyboard = e.target.value;
+      if (kirimMouse || kirimKeyboard === true) {
+        this.tambahEmit(this.dataSearch);
         this.dataSearch = "";
-    }
+      }
+    },
+    tambahEmit: function (event) {
+      let dataCari = event;
+      this.caridata = dataCari;
+      this.cariproduct();
+      // console.log(event)
+    },
+    cariproduct: function () {
+      this.$store.dispatch(`searchProduct`, this.caridata);
+    },
+    active: function (data) {
+      // jika isi menu sama dengan data baru dari function active
+      if (this.menu === data) {
+        // kembalikan isi function berupa true
+        return true;
+      }
+    },
+    buttonActive: function (dataButton) {
+      // this.routeProduct();
+      //  this.$router.push({ path : '/product' })
+      // jika data menu sama dengan data menu
+      if (this.menu === this.menu) {
+        // console.log(dataButton)
+        // ubah data menu menjadi data baru dari parameter function button active
+        this.menu = dataButton;
+        this.caridata = this.menu;
+        this.cariproduct();
+
+        console.log(this.caridata);
+      }
+    },
   },
-  }
+  updated() {
+     this.$store.dispatch(`searchProduct`,this.caridata);
+  },
 };
 </script>
 
 <style scoped>
 .nav-link {
-    color: white;
+  color: white;
 }
 
 .btnSubmit {
   background-color: transparent;
-  border : 0px solid transparent;
+  border: 0px solid transparent;
+}
+
+.btnEdit {
+  margin: auto 10px;
+  background-color: white;
+  border: none;
+}
+
+.btnEdit.active {
+  border: none;
+  color: rgba(17, 175, 175, 0.678);
+}
+
+.btnEdit:hover {
+  color: rgb(109, 211, 177);
+  transition: 0.4s;
 }
 </style>
