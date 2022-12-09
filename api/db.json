@@ -366,8 +366,8 @@
   "checkout": [
     {
       "id": 1,
-      "jumlah": 1,
-      "size": "Size S",
+      "jumlah": "2",
+      "size": "30 Size M",
       "products": {
         "id": 4,
         "kode": "celana",

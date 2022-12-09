@@ -35,10 +35,10 @@ export default {
     }
   },
   
-  mounted(){
-    this.$store.dispatch(`searchProduct`,this.caridata);
+  // mounted(){
+  //   this.$store.dispatch(`searchProduct`,this.caridata);
     
-  }
+  // }
 };
 </script>
 
