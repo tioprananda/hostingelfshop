@@ -1,7 +1,7 @@
 <template>
   <div class="detailProduct">
     <Navbar/>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-2 mb-5">
         <div class="row">
             <div class="col-md-4 mt-5">
               <div class="card border-0 shadow mx-2">
@@ -12,7 +12,7 @@
                 />
               </div>
             </div>
-            <div class="col-md-5 mt-5 judulForm">
+            <div class="col-md-5 mt-5 mb-5 judulForm">
                 <h1>{{product.nama}}</h1>
                 <h3>Rp. {{product.harga}}</h3>
                   <div class="menu-detail mt-3">
@@ -138,6 +138,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
 <script>
 import Navbar from "@/components/Navbar.vue";
 import axios from "axios";
+import { mapState, mapActions, mapGetters, } from "vuex";
 
 export default {
   name: "DetailProduct",
@@ -147,21 +148,22 @@ export default {
 
   data: function () {
     return {
-      checkoutBag: [],
-      product: ``,
-      pesan : {
-        id:``,
-        jumlah:1,
-        size:`Size S`,
-        products:[],
-      },
+    
       menu: `detail`,
     };
   },
 
+  computed : {
+
+    ...mapGetters([`totalHarga`,]),
+    ...mapState([`product`,`checkoutBag`,`pesan`]),
+   
+  },
+
   methods: {
 
-
+    ...mapActions([`setCheckout`,`setProductId`]),
+   
 
     ubahKeranjang: function (id, item) {
       axios
@@ -248,16 +250,7 @@ export default {
       }
   
     },
-  
-    setCheckout: function (data) {
-      this.checkoutBag = data;;
-      // console.log(this.checkoutBag)
-    },
 
-    setProduct: function (data) {
-      this.product = data;
-      // console.log(data);
-    },
     active: function (data) {
       // jika isi menu sama dengan data baru dari function active
       if (this.menu === data) {
@@ -274,24 +267,12 @@ export default {
       }
     },
   },
-  computed : {
-      totalHarga: function () {
-      return this.checkoutBag.reduce((acc, curr) => {
-        return acc + curr.products.harga * curr.jumlah;
-      }, 0);
-    },
-  },
+ 
 
   mounted() {
-    axios
-      .get("http://localhost:3000/products/" + this.$route.params.id)
-      .then((response) => this.setProduct(response.data))
-      .catch((error) => console.log("gagal : ", error));
 
-      axios
-            .get("http://localhost:3000/checkout")
-            .then((response) => this.setCheckout(response.data))
-            .catch((error) => console.log("gagal : ", error));
+    this.setProductId(this.$route.params.id);
+    this.setCheckout();
  
   },
 };

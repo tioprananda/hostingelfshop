@@ -33,3 +33,22 @@ export const searchProduct = ({commit}, dataSearch) => {
 export const submitproses = ({commit}, e) => {
   commit(`SUBMIT_PROSES`, e);
 }
+
+// detailproduct
+export const setCheckout = ({commit}) => {
+   axios
+            .get("http://localhost:3000/checkout")
+            .then((response) => {
+              commit(`SETCHECKOUT`, response.data)
+            })
+            .catch((error) => console.log("gagal : ", error));
+};
+
+export const setProductId = ({commit}, paramsId) => {
+   axios
+      .get("http://localhost:3000/products/" + paramsId)
+      .then((response) => {
+        commit(`SET_PRODUCT_ID`, response.data)
+      })
+      .catch((error) => console.log("gagal : ", error));
+}
