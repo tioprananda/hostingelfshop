@@ -29,6 +29,9 @@
               ><b-icon-people /> Login</router-link
             >
           </b-nav-item>
+
+          <b-button type="submit" align="center" class="btnCart" v-b-modal.modal-center @click="showCart"><b-icon-cart/> Item</b-button>
+
         </b-navbar-nav>
         <form 
           class="d-flex ml-auto"
@@ -136,6 +139,7 @@
 </template>
 
 <script>
+import { mapActions,mapState } from 'vuex';
 export default {
   name: `Navbar`,
   data: function () {
@@ -149,8 +153,17 @@ export default {
     dataSearchProduct: function () {
       return this.$store.state.dataSearchProduct;
     },
+
+    ...mapState([`product`]),
   },
   methods: {
+
+    ...mapActions([`setProductId`]),
+
+    showCart : function () {
+      this.$router.push("/product"+this.$routes.params.id).catch(()=>{});
+    },
+
     routeProduct: function () {
       this.$router.push("/product").catch(()=>{});
       // this.$router.push({ path: "/product" });
@@ -195,6 +208,11 @@ export default {
       }
     },
   },
+
+  mounted() {
+    this.setProductId(this.$route.params.id);
+  },
+
   updated() {
      this.$store.dispatch(`searchProduct`,this.caridata);
   },
@@ -202,6 +220,11 @@ export default {
 </script>
 
 <style scoped>
+.btnCart {
+  background-color: rgba(17, 175, 175, 0.678);
+  width: 100px;
+}
+
 .nav-link {
   color: white;
 }

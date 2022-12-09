@@ -3,7 +3,7 @@
     <Navbar/>
     <div class="container-fluid mt-2 mb-5">
         <div class="row">
-            <div class="col-md-4 mt-5">
+            <div class="col-md-4 mt-2">
               <div class="card border-0 shadow mx-2">
                 <img
                   :src="'../assets/pakaian/'+product.gambar"
@@ -12,7 +12,7 @@
                 />
               </div>
             </div>
-            <div class="col-md-5 mt-5 mb-5 judulForm">
+            <div class="col-md-5 mt-2 mb-5 judulForm">
                 <h1>{{product.nama}}</h1>
                 <h3>Rp. {{product.harga}}</h3>
                   <div class="menu-detail mt-3">
@@ -59,7 +59,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                   </div>
                 </div>
             </div>
-            <div class="col-md-2 mt-5">
+            <div class="col-md-2 mt-2">
               <div class="classForm">
               <h4>PILIH UKURAN</h4>
               <h6>Anda tidak yakin? Lihat Detail Ukuran</h6>
@@ -117,7 +117,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                     </div>
                     <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item.id, item)">Ubah</b-button>
                     <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="hapusKeranjang(item.id)">Hapus</b-button>
-                  </form>
+                          </form>
 
                           </div>
                         </div>
