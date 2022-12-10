@@ -82,8 +82,6 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                     <b-button type="submit" align="center" class="btnSubmit" v-b-modal.modal-center @click="submitOrder">beli</b-button>
                   </form>
 
-                 
-
                 </div>
               </div>
             </div>
@@ -123,62 +121,6 @@ export default {
 
     ...mapActions([`setCheckout`,`setProductId`]),
    
-
-    // ubahKeranjang: function (id, item) {
-    //   axios
-    //   .put("http://localhost:3000/checkout/"+id,
-    //   {
-    //     id : item.id,
-    //     jumlah: item.jumlah,
-    //     size : item.size,
-    //     products: {
-    //       id: item.products.id,
-    //       kode: item.products.kode,
-    //       nama: item.products.nama,
-    //       harga: item.products.harga,
-    //       is_ready: item.products.is_ready,
-    //       gambar: item.products.gambar,
-    //     },
-    //   })
-    //   .then(() => { 
-    //   // this.$router.push({ path : '/keranjang' })
-    //   this.$toast.success(`Pesanan ditambahkan ke keranjang`,{
-    //     duration : 3000,
-    //     message : `Pesanan berhasil ditambahkan`,
-    //     position : `top-right`,
-    //     dismissible : true,
-    //   })
-    //     //  setelah post axios, data checkout akan langsung ditampilkan
-    //     axios
-    //   .get("http://localhost:3000/checkout")
-    //   .then((response) => this.setCheckout(response.data))
-    //   .catch((error) => console.log("gagal : ", error));  
-    // })
-    //   .catch((error) => console.log("gagal : ", error));
-     
-    // },
-  
-    // hapusKeranjang: function (id) {
-    //   // axios hapus data
-    //   axios
-    //     .delete("http://localhost:3000/checkout/" + id)
-    //     .then(() => {
-    //       this.$toast.success(`Pesanan berhasil dihapus`, {
-    //         duration: 3000,
-    //         message: `Pesanan berhasil dihapus`,
-    //         position: `top-right`,
-    //         dismissible: true,
-    //       });
-    //       // setelah dihapus, panggil kembali data yg tersisa
-    //       axios
-    //         .get("http://localhost:3000/checkout")
-    //         .then((response) => this.setCheckout(response.data))
-    //         .catch((error) => console.log("gagal : ", error));
-    //     })
-    //     // axios gagal mengambil data
-    //     .catch((error) => console.log("gagal : ", error));
-    // },
-
     submitOrder : function (){
       if(this.pesan.jumlah){
         this.pesan.products = this.product;

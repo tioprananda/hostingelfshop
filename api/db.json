@@ -363,19 +363,5 @@
       "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "checkout": [
-    {
-      "id": 2,
-      "jumlah": "13",
-      "size": "Size XL",
-      "products": {
-        "id": 41,
-        "kode": "tas",
-        "nama": "Tas Waterproof",
-        "harga": 60000,
-        "is_ready": true,
-        "gambar": "trm_waterproof_tactical_simple_fk9301_ia1-1765b-3073_10586-t3073_116.jpg"
-      }
-    }
-  ]
+  "checkout": []
 }

@@ -28,13 +28,14 @@
             <router-link to="/login" class="nav-link"
               ><b-icon-people /> Login</router-link
             >
-
             <!-- DETAIL PRODUCT -->
           </b-nav-item>
-          <b-button type="submit" align="center" class="btnCart" v-b-modal.modal-center><b-icon-cart/> Item</b-button>
+
+          <b-nav-item align="right">
+            <b-button type="submit" align="right" class="btnCart nav-link" v-b-modal.modal-center @click="cartDetail"><b-icon-cart/> {{checkoutBag.length}} Item</b-button>
            <!-- MODAL BOX -->
            <div>
-                    <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
+              <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
                       <div class="row itemKeranjang" v-for="item in checkoutBag" :key="item.id">
                             <div class="col-md-3 itemDetail">
                             <div class="card border-0 shadow mx-2">
@@ -73,10 +74,12 @@
                         </div>
                         <h5 class="totalBelanja"><strong>Total Belanja ({{checkoutBag.length}} pcs) : Rp. {{totalHarga}}</strong></h5>
                     </b-modal>
-                  </div>
-        </b-navbar-nav>
-        <form 
-          class="d-flex ml-auto"
+            </div>
+          </b-nav-item>
+
+          <b-nav-item>
+            <form 
+          class="d-flex ml-auto mx-2"
           role="search"
           v-on:submit.prevent="submitproses"
         >
@@ -87,11 +90,16 @@
             type="text"
             placeholder="Search"
             aria-label="Search"
+            required
           />
           <button class="btn btn-dark" type="submit">
             <b-icon-search />
           </button>
         </form>
+          </b-nav-item>
+
+        </b-navbar-nav>
+       
       </b-collapse>
     </b-navbar>
 
@@ -205,6 +213,10 @@ export default {
 
     ...mapActions([`setCheckout`,`setProductId`,`setProductId`]),
 
+    cartDetail: function() {
+      this.setCheckout();
+    },
+
     ubahKeranjang: function (id, item) {
       axios
       .put("http://localhost:3000/checkout/"+id,
@@ -307,7 +319,7 @@ export default {
 
   mounted() {
     this.setProductId(this.$route.params.id);
-    this.setCheckout();
+    
   },
 
   updated() {
@@ -364,7 +376,7 @@ export default {
 
 .btnCart {
   background-color: rgba(17, 175, 175, 0.678);
-  width: 100px;
+  width: 120px;
 }
 
 .nav-link {
