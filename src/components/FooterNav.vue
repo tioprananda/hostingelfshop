@@ -75,7 +75,7 @@
           <br />
           <div class="row">
             <div class="col">
-              <router-link to="/about" class="nav-link"
+              <router-link to="/aboutme" class="nav-link"
                 ><span>Hubungi Kami</span></router-link
               >
             </div>
