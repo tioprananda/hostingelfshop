@@ -35,10 +35,10 @@ export default {
     }
   },
   
-  mounted(){
-    // this.$store.dispatch(`searchProduct`,this.caridata);
+  // mounted(){
+  //   this.$store.dispatch(`searchProduct`,this.caridata);
     
-  }
+  // }
 };
 </script>
 
@@ -54,6 +54,7 @@ export default {
     color: rgba(17, 175, 175, 0.678);
 
 }
+
 
 .btnEdit:hover {
    color :rgb(109, 211, 177);

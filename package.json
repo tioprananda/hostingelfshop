@@ -18,7 +18,8 @@
     "vue-slick-carousel": "^1.0.6",
     "vue-toast-notification": "^0.6.3",
     "vueperslides": "^2.16.0",
-    "vuex": "^3.6.2"
+    "vuex": "^3.6.2",
+    "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

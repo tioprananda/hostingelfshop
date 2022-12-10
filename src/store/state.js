@@ -10,4 +10,14 @@ export default {
     caridata : ``,
     dataSearch : ``,
     menu : ``,
+
+    // detailproduct
+    checkoutBag: [],
+    pesan : {
+        id:``,
+        jumlah:1,
+        size:`Size S`,
+        products:[],
+      },
+
 }

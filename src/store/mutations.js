@@ -21,3 +21,12 @@ export const SUBMIT_PROSES = (state, e) => {
          state.dataSearch = "";
      }
 }
+
+// detailproduct
+export const SETCHECKOUT = (state, setCheckout) => {
+    state.checkoutBag = setCheckout;
+};
+
+export const SET_PRODUCT_ID = (state, setProductId) => {
+    state.product = setProductId;
+}
