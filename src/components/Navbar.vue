@@ -7,6 +7,7 @@
       ></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
+
         <b-navbar-nav class="d-flex mr-auto">
           <!-- <b-nav-item>
             <router-link to="/" class="nav-link"
@@ -22,56 +23,63 @@
 
         <b-navbar-nav class="ml-auto">
           <b-nav-item>
-            <router-link to="/konfirmasi-pembayaran" class="nav-link"
-              ><b-icon-credit-card /> Konfirmasi Pembayaran</router-link
-            >
+            <router-link to="/konfirmasi-pembayaran" class="nav-link"><b-icon-credit-card /> Konfirmasi Pembayaran</router-link>
           </b-nav-item>
+
+          <!-- HALAMAN LOGIN -->
           <b-nav-item>
-            <router-link to="" class="nav-link" v-b-modal.modalLogin
-              ><b-icon-people /> Masuk / Daftar</router-link>
+            <router-link to="" class="nav-link" v-b-modal.modalLogin><b-icon-people /> Masuk / Daftar</router-link>
+            <div>
+              <b-modal
+                ref="my-modal"
+                hide-footer
+                id="modalLogin"
+                class="d-block text-center"
+                centered
+                title="Masuk">
+                <div class="d-block text-center"></div>
+                  <form ref="form" @submit.stop.prevent="login">
+                  <!-- email -->
+                  <b-form-group
+                    label="email *"
+                    label-for="email"
+                    invalid-feedback="email is required">
+                    <b-form-input
+                      id="email"
+                      v-model="email"
+                      required>
+                    </b-form-input>
+                  </b-form-group>
 
-              <div>
-    <b-modal ref="my-modal" hide-footer id="modalLogin" class="d-block text-center" centered title="Masuk" >
-      <div class="d-block text-center">
-      </div>
-      <!-- <b-modal id="modalLogin" class="d-block text-center" centered title="Masuk"> -->
-        <form ref="form" @submit.stop.prevent="login">
-                <!-- email -->
-                <b-form-group
-                  label="email *"
-                  label-for="email"
-                  invalid-feedback="email is required">
-                  <b-form-input
-                    id="email"
-                    v-model="email"
-                    required
-                  ></b-form-input>
-                </b-form-group>
-                <!-- password -->
-                <b-form-group
-                  label="password *"
-                  label-for="password"
-                  invalid-feedback="password is required">
-                  <b-form-input
-                    id="password"
-                    v-model="password"
-                    required
-                  ></b-form-input> 
-                  <br>
-                  <router-link to="register" class="register">Lupa Password? Atau Daftar</router-link>
-                  <b-button class="mt-3" type="submit" variant="info" block @click="masuk">Masuk</b-button>
-                </b-form-group>
-              
-              </form>
+                  <!-- password -->
+                  <b-form-group
+                    label="password *"
+                    label-for="password"
+                    invalid-feedback="password is required">
+                    <b-form-input
+                      id="password"
+                      v-model="password"
+                      required>
+                    </b-form-input><br />
 
-    </b-modal>
-  </div>
+                    <!-- link register -->
+                    <router-link to="/register" class="register"> Lupa Password? Atau Daftar
+                    </router-link>
+                  </b-form-group>
 
-
-            
-            <!-- </b-modal> -->
+                  <!-- tombol login -->
+                  <b-button
+                    class="mt-3"
+                    type="submit"
+                    variant="info"
+                    block> Masuk 
+                  </b-button>
+                </form>
+              </b-modal>
+            </div>
           </b-nav-item>
 
+          <!-- HALAMAN ITEM -->
           <b-nav-item>
             <button
               type="submit"
@@ -112,7 +120,7 @@
                       Harga/Total : Rp. {{ item.products.harga * item.jumlah }}
                     </h6>
 
-                    <!-- MODAL BOX KECIL -->
+                    <!-- FORM UBAH DELETE -->
                     <form class="formCustom" v-on:submit.prevent>
                       <div class="form-group">
                         <select
@@ -280,6 +288,8 @@ export default {
       menu: ``,
       caridata: ``,
       dataSearch: ``,
+      email:``,
+      password:``,
     };
   },
   computed: {
@@ -408,9 +418,8 @@ export default {
 </script>
 
 <style scoped>
-
 .register {
-text-decoration: none;
+  text-decoration: none;
 }
 
 .btnUbah {

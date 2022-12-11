@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/ProductView.vue'
+import Register from '../views/Register.vue'
 import CaraBeli from '../components/FooterDetail/CaraBeli.vue'
 import PanduanUkuran from '../components/FooterDetail/PanduanUkuran.vue'
 import Retur from '../components/FooterDetail/Retur.vue'
@@ -46,6 +47,11 @@ const routes = [
     path: '/newsletter',
     name: 'NewsLetter',
     component: NewsLetter,
+  }, 
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
   }, 
   {
     path: '/product/:id',

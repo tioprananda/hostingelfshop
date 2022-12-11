@@ -12,10 +12,12 @@
             Dapatkan informasi mengenai promosi & harga dengan cara berlangganan
             newsletter kami.
           </p>
-          
-          <!-- Using components -->
+
+          <!-- button subscribe -->
           <b-input-group size="sm" class="mt-2">
-            <b-form-input placeholder="Input Email Anda Disini..."></b-form-input>
+            <b-form-input
+              placeholder="Input Email Anda Disini..."
+            ></b-form-input>
             <b-input-group-append>
               <b-button variant="info">Subscribe!</b-button>
             </b-input-group-append>
