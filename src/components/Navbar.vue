@@ -298,7 +298,11 @@ export default {
     },
 
     ...mapGetters([`totalHarga`]),
+<<<<<<< HEAD
     ...mapState([`product`, `checkoutBag`, `pesan`]),
+=======
+    ...mapState([`product`, `checkoutBag`, `pesan`, `menu`]),
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
   },
   methods: {
     ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
@@ -408,7 +412,11 @@ export default {
   },
 
   mounted() {
+<<<<<<< HEAD
     this.setProductId(this.$route.params.id);
+=======
+    // this.setProductId(this.$route.params.id);
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
   },
 
   updated() {

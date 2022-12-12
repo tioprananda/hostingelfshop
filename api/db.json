@@ -365,6 +365,7 @@
   ],
   "checkout": [
     {
+<<<<<<< HEAD
       "id": 3,
       "jumlah": "1",
       "size": "Size S",
@@ -375,6 +376,18 @@
         "harga": 29000,
         "is_ready": true,
         "gambar": "to2_fedora_caplin_at-e07d8-3073_3442-t3073_116.jpg"
+=======
+      "id": 4,
+      "jumlah": "19",
+      "size": "Size XL",
+      "products": {
+        "id": 27,
+        "kode": "baju",
+        "nama": "Hoddie Gray",
+        "harga": 12000,
+        "is_ready": true,
+        "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
       }
     }
   ]

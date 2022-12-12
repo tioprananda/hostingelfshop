@@ -4,8 +4,13 @@
     <div class="container">
       <div class="row mt-5 mb-5">
         <div class="col-md-5 borderLogin">
+<<<<<<< HEAD
           <div class="container formLogin">
             <h3 class="text-center">MASUK</h3><br>
+=======
+          
+            <h4 class="text-center">MASUK</h4><br>
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
             <!-- <b-modal id="modalLogin" class="d-block text-center" centered title="Masuk"> -->
             <form ref="form" @submit.stop.prevent="login">
               <!-- email -->
@@ -79,12 +84,20 @@
 
             </div>
 
+<<<<<<< HEAD
           </div>
         </div>
 
         <div class="col-md-5 borderRegister">
           <div class="container formRegister">
             <h3 class="text-center">DAFTAR AKUN ELFS SHOP</h3><br>
+=======
+          
+        </div>
+
+        <div class="col-md-5 borderRegister">
+            <h4 class="text-center">DAFTAR AKUN ELFS SHOP</h4><br>
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
             <form ref="form" @submit.stop.prevent="login">
               <!-- email -->
               <b-form-group
@@ -276,7 +289,10 @@
                    >Daftar Member Baru</b-button
                 >
             </form><br>
+<<<<<<< HEAD
           </div>
+=======
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
         </div>
       </div>
     </div>
@@ -284,13 +300,21 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import VueRecaptcha from 'vue-recaptcha';
+=======
+// import VueRecaptcha from 'vue-recaptcha';
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
 import Navbar from "@/components/Navbar.vue";
 export default {
   name: `Register`,
   components: {
     Navbar,
+<<<<<<< HEAD
     VueRecaptcha
+=======
+    // VueRecaptcha
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
   },
   data : () => {
     return {
@@ -324,11 +348,16 @@ option {
 }
 
 .form-select {
+<<<<<<< HEAD
   margin: 3px;
+=======
+  margin: 5px;
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
 }
 
 .borderLogin {
     border-right: 1px solid rgb(221, 218, 218);
+<<<<<<< HEAD
 }
 .formLogin {
   padding: 30px;
@@ -343,4 +372,17 @@ option {
   padding: 30px;
   width: 440px;
 }
+=======
+    padding: 30px;
+    width: 440px;
+  }
+
+.borderRegister {
+  margin-left: 0px;
+  padding: 30px;
+  width: 440px;
+
+}
+
+>>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
 </style>
