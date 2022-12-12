@@ -9,6 +9,7 @@ import Retur from '../components/FooterDetail/Retur.vue'
 import Faq from '../components/FooterDetail/Faq.vue'
 import NewsLetter from '../components/FooterDetail/NewsLetter.vue'
 import DetailProduct from '../views/DetailProduct.vue'
+import Bayar from '../views/Bayar.vue'
 
 Vue.use(VueRouter)
 
@@ -58,6 +59,11 @@ const routes = [
     name: 'DetailProduct',
     component: DetailProduct,
   }, 
+  {
+    path: '/bayar',
+    name: 'bayar',
+    component: Bayar
+  },
   {
     path: '/about',
     name: 'about',

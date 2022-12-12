@@ -86,7 +86,6 @@
               align="right"
               class="btnCart nav-link"
               v-b-modal.modal-center
-              @click="cartDetail"
             >
               <b-icon-cart /> {{ checkoutBag.length }} Item
             </button>
@@ -96,6 +95,9 @@
                 id="modal-center"
                 centered
                 title="Dalam Keranjang Belanjaan Saya"
+                ref="my-modal"
+                hide-footer
+                class="d-block text-center"
               >
                 <div
                   class="row itemKeranjang"
@@ -167,6 +169,22 @@
                     {{ totalHarga }}</strong
                   >
                 </h5>
+
+                <b-button
+                    class="mt-3"
+                    type="submit"
+                    variant="info"
+                    @click="hideModal"
+                    block> Lanjut Belanja
+                  </b-button>
+
+                  <b-button
+                    class="mt-3"
+                    type="submit"
+                    variant="info"
+                    @click="bayar"
+                    block> Bayar
+                  </b-button>
               </b-modal>
             </div>
           </b-nav-item>
@@ -298,16 +316,18 @@ export default {
     },
 
     ...mapGetters([`totalHarga`]),
-<<<<<<< HEAD
-    ...mapState([`product`, `checkoutBag`, `pesan`]),
-=======
-    ...mapState([`product`, `checkoutBag`, `pesan`, `menu`]),
->>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
+    ...mapState([`product`, `checkoutBag`, `pesan`,]),
   },
   methods: {
     ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
 
-    cartDetail: function () {},
+    bayar : function () {
+      this.$router.push({ path : '/bayar' })
+    },
+
+    hideModal() {
+        this.$refs['my-modal'].hide()
+      },
 
     ubahKeranjang: function (id, item) {
       axios
@@ -412,11 +432,7 @@ export default {
   },
 
   mounted() {
-<<<<<<< HEAD
-    this.setProductId(this.$route.params.id);
-=======
     // this.setProductId(this.$route.params.id);
->>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
   },
 
   updated() {

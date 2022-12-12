@@ -365,21 +365,9 @@
   ],
   "checkout": [
     {
-<<<<<<< HEAD
-      "id": 3,
+      "id": 4,
       "jumlah": "1",
       "size": "Size S",
-      "products": {
-        "id": 32,
-        "kode": "topi",
-        "nama": "Topi Fedora Caplin",
-        "harga": 29000,
-        "is_ready": true,
-        "gambar": "to2_fedora_caplin_at-e07d8-3073_3442-t3073_116.jpg"
-=======
-      "id": 4,
-      "jumlah": "19",
-      "size": "Size XL",
       "products": {
         "id": 27,
         "kode": "baju",
@@ -387,7 +375,19 @@
         "harga": 12000,
         "is_ready": true,
         "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
->>>>>>> 074260acb75bbef115fe17368012cf8ba93dcc67
+      }
+    },
+    {
+      "id": 5,
+      "jumlah": 1,
+      "size": "Size S",
+      "products": {
+        "id": 5,
+        "kode": "celana",
+        "nama": "Jogger Hitam Pendek",
+        "harga": 56000,
+        "is_ready": true,
+        "gambar": "cdj_garment_pocket_list_009_bd_1-3c895-3073_2594-t3073_116.jpg"
       }
     }
   ]
