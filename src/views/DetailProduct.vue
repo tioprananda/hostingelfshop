@@ -69,7 +69,8 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                     <div class="form-group">
                               <label for="ukuran">Ukuran</label>
                               <select class="custom-select custom-select-sm" v-model="pesan.size">
-                                <option value="Size S" selected>Size S</option>
+                                <option value="All Size" selected>All Size</option>
+                                <option value="Size S">Size S</option>
                                 <option value="30 Size M">30 Size M</option>
                                 <option value="Size L">Size L</option>
                                 <option value="Size XL">Size XL</option>
@@ -105,7 +106,6 @@ export default {
 
   data: function () {
     return {
-    
       menu: `detail`,
     };
   },

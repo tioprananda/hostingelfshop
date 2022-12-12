@@ -365,22 +365,9 @@
   ],
   "checkout": [
     {
-      "id": 4,
-      "jumlah": "1",
-      "size": "Size S",
-      "products": {
-        "id": 27,
-        "kode": "baju",
-        "nama": "Hoddie Gray",
-        "harga": 12000,
-        "is_ready": true,
-        "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
-      }
-    },
-    {
-      "id": 5,
+      "id": 11,
       "jumlah": 1,
-      "size": "Size S",
+      "size": "All Size",
       "products": {
         "id": 5,
         "kode": "celana",

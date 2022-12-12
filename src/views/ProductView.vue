@@ -3,8 +3,14 @@
     <Navbar></Navbar>
     <div class="container mb-5">
       <div class="row">
-        <ul class="col-md-3 nav justify-content-center" v-for="item in dataSearchProduct" :key="item.id" >
-            <li class="nav-item"><CardProduct :productprop="item"></CardProduct></li>
+        <ul
+          class="col-md-3 nav justify-content-center"
+          v-for="item in dataSearchProduct"
+          :key="item.id"
+        >
+          <li class="nav-item">
+            <CardProduct :productprop="item"></CardProduct>
+          </li>
         </ul>
       </div>
     </div>
@@ -21,43 +27,39 @@ export default {
     Navbar,
     CardProduct,
   },
-  data:function(){
-    return{
-
-    }
+  data: function () {
+    return {};
   },
-  computed : {
-    dataSearchProduct : function () {
-      return this.$store.state.dataSearchProduct;  
+  computed: {
+    dataSearchProduct: function () {
+      return this.$store.state.dataSearchProduct;
     },
-    caridata : function () {
+    caridata: function () {
       return this.$store.state.caridata;
-    }
+    },
   },
-  
+
   // mounted(){
   //   this.$store.dispatch(`searchProduct`,this.caridata);
-    
+
   // }
 };
 </script>
 
 <style scoped>
 .btnEdit {
-    margin: auto 10px;
-    background-color: white;
-    border: none;
+  margin: auto 10px;
+  background-color: white;
+  border: none;
 }
 
 .btnEdit.active {
-    border: none;
-    color: rgba(17, 175, 175, 0.678);
-
+  border: none;
+  color: rgba(17, 175, 175, 0.678);
 }
 
-
 .btnEdit:hover {
-   color :rgb(109, 211, 177);
-   transition: .4s;
+  color: rgb(109, 211, 177);
+  transition: 0.4s;
 }
 </style>

@@ -7,7 +7,6 @@
       ></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
-
         <b-navbar-nav class="d-flex mr-auto">
           <!-- <b-nav-item>
             <router-link to="/" class="nav-link"
@@ -23,12 +22,16 @@
 
         <b-navbar-nav class="ml-auto">
           <b-nav-item>
-            <router-link to="/konfirmasi-pembayaran" class="nav-link"><b-icon-credit-card /> Konfirmasi Pembayaran</router-link>
+            <router-link to="/konfirmasi-pembayaran" class="nav-link"
+              ><b-icon-credit-card /> Konfirmasi Pembayaran</router-link
+            >
           </b-nav-item>
 
           <!-- HALAMAN LOGIN -->
           <b-nav-item>
-            <router-link to="" class="nav-link" v-b-modal.modalLogin><b-icon-people /> Masuk / Daftar</router-link>
+            <router-link to="" class="nav-link" v-b-modal.modalLogin
+              ><b-icon-people /> Masuk / Daftar</router-link
+            >
             <div>
               <b-modal
                 ref="my-modal"
@@ -36,18 +39,17 @@
                 id="modalLogin"
                 class="d-block text-center"
                 centered
-                title="Masuk">
+                title="Masuk"
+              >
                 <div class="d-block text-center"></div>
-                  <form ref="form" @submit.stop.prevent="login">
+                <form ref="form" @submit.stop.prevent="login">
                   <!-- email -->
                   <b-form-group
                     label="email *"
                     label-for="email"
-                    invalid-feedback="email is required">
-                    <b-form-input
-                      id="email"
-                      v-model="email"
-                      required>
+                    invalid-feedback="email is required"
+                  >
+                    <b-form-input id="email" v-model="email" required>
                     </b-form-input>
                   </b-form-group>
 
@@ -55,24 +57,21 @@
                   <b-form-group
                     label="password *"
                     label-for="password"
-                    invalid-feedback="password is required">
-                    <b-form-input
-                      id="password"
-                      v-model="password"
-                      required>
-                    </b-form-input><br />
+                    invalid-feedback="password is required"
+                  >
+                    <b-form-input id="password" v-model="password" required>
+                    </b-form-input
+                    ><br />
 
                     <!-- link register -->
-                    <router-link to="/register" class="register"> Lupa Password? Atau Daftar
+                    <router-link to="/register" class="register">
+                      Lupa Password? Atau Daftar
                     </router-link>
                   </b-form-group>
 
                   <!-- tombol login -->
-                  <b-button
-                    class="mt-3"
-                    type="submit"
-                    variant="info"
-                    block> Masuk 
+                  <b-button class="mt-3" type="submit" variant="info" block>
+                    Masuk
                   </b-button>
                 </form>
               </b-modal>
@@ -130,7 +129,8 @@
                           placeholder="Ubah Size"
                           v-model="item.size"
                         >
-                          <option value="Size S" selected>Size S</option>
+                          <option value="All Size" selected>All Size</option>
+                          <option value="Size S">Size S</option>
                           <option value="30 Size M">30 Size M</option>
                           <option value="Size L">Size L</option>
                           <option value="Size XL">Size XL</option>
@@ -171,20 +171,24 @@
                 </h5>
 
                 <b-button
-                    class="mt-3"
-                    type="submit"
-                    variant="info"
-                    @click="hideModal"
-                    block> Lanjut Belanja
-                  </b-button>
+                  class="mt-3"
+                  type="submit"
+                  variant="info"
+                  @click="hideModal"
+                  block
+                >
+                  Lanjut Belanja
+                </b-button>
 
-                  <b-button
-                    class="mt-3"
-                    type="submit"
-                    variant="info"
-                    @click="bayar"
-                    block> Bayar
-                  </b-button>
+                <b-button
+                  class="mt-3"
+                  type="submit"
+                  variant="info"
+                  @click="bayar"
+                  block
+                >
+                  Bayar
+                </b-button>
               </b-modal>
             </div>
           </b-nav-item>
@@ -306,8 +310,8 @@ export default {
       menu: ``,
       caridata: ``,
       dataSearch: ``,
-      email:``,
-      password:``,
+      email: ``,
+      password: ``,
     };
   },
   computed: {
@@ -316,18 +320,18 @@ export default {
     },
 
     ...mapGetters([`totalHarga`]),
-    ...mapState([`product`, `checkoutBag`, `pesan`,]),
+    ...mapState([`product`, `checkoutBag`, `pesan`]),
   },
   methods: {
     ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
 
-    bayar : function () {
-      this.$router.push({ path : '/bayar' })
+    bayar: function () {
+      this.$router.push({ path: "/bayar" });
     },
 
     hideModal() {
-        this.$refs['my-modal'].hide()
-      },
+      this.$refs["my-modal"].hide();
+    },
 
     ubahKeranjang: function (id, item) {
       axios
