@@ -5,6 +5,8 @@
     <div class="container mt-5 mb-5">
       <div class="row conInformation">
         <div class="col-md-3 mb-3">
+
+          <!-- KOLOM TOKO -->
           <h6><strong>TOKO</strong></h6>
           <br />
           <div class="row">
@@ -12,12 +14,7 @@
             <div class="col">
               <span>Pekanbaru City, Riau, Indonesia</span> <br />
               <router-link to="/hubungi">
-                <button
-                  type="button"
-                  class="btn btn-secondary btn-sm buttonPeta"
-                >
-                  Lihat Peta
-                </button>
+                <button type="button" class="btn btn-secondary btn-sm buttonPeta"> Lihat Peta </button>
               </router-link>
             </div>
           </div>
@@ -31,6 +28,7 @@
           </div>
         </div>
 
+        <!-- KOLOM INFORMASI -->
         <div class="col-md-3 mb-3">
           <H6><strong>INFORMASI</strong></H6>
           <br />
@@ -70,12 +68,14 @@
             </div>
           </div>
         </div>
+
+        <!-- KOLOM TENTANG KAMI -->
         <div class="col-md-3 mb-3">
           <H6><strong>TENTANG KAMI</strong></H6>
           <br />
           <div class="row">
             <div class="col">
-              <router-link to="/about" class="nav-link"
+              <router-link to="/aboutme" class="nav-link"
                 ><span>Hubungi Kami</span></router-link
               >
             </div>
@@ -121,6 +121,8 @@
             </div>
           </div>
         </div>
+
+        <!-- KOLOM IKUTI KAMI -->
         <div class="col-md-3 mb-3">
           <H6><strong>IKUTI KAMI</strong></H6>
           <br />
@@ -137,6 +139,8 @@
               </router-link>
             </div>
           </div>
+
+          <!-- KOLOM VERIFIKASI ELFS SHOP -->
           <H6 class="mt-3"><strong>VERIFIKASI ELFS SHOP</strong></H6>
           <br />
           <div class="row">
@@ -155,6 +159,7 @@
         </div>
       </div>
     </div>
+
     <div class="container-fluid pembayaran">
       <div class="row text-center paddingPembayaran">
         <div class="col-md-4">
@@ -186,6 +191,7 @@
         </div>
       </div>
     </div>
+    
     <div class="container mt-5 mb-5">
       <div class="row">
         <div class="col mt-2">

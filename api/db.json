@@ -363,5 +363,19 @@
       "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "checkout": []
+  "checkout": [
+    {
+      "id": 4,
+      "jumlah": "19",
+      "size": "Size XL",
+      "products": {
+        "id": 27,
+        "kode": "baju",
+        "nama": "Hoddie Gray",
+        "harga": 12000,
+        "is_ready": true,
+        "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
+      }
+    }
+  ]
 }

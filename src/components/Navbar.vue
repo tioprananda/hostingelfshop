@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
@@ -8,77 +7,171 @@
       ></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
+
         <b-navbar-nav class="d-flex mr-auto">
-          <b-nav-item>
+          <!-- <b-nav-item>
             <router-link to="/" class="nav-link"
               ><b-icon-house /> Home</router-link
             >
-          </b-nav-item>
+          </b-nav-item> -->
           <!-- <b-nav-item>
             <router-link to="/product" class="nav-link"
               ><b-icon-card-checklist /> Products</router-link
             >
           </b-nav-item> -->
+        </b-navbar-nav>
+
+        <b-navbar-nav class="ml-auto">
           <b-nav-item>
-            <router-link to="/konfirmasi-pembayaran" class="nav-link"
-              ><b-icon-credit-card /> Pembayaran</router-link
-            >
-          </b-nav-item>
-          <b-nav-item>
-            <router-link to="/login" class="nav-link"
-              ><b-icon-people /> Login</router-link
-            >
-            <!-- DETAIL PRODUCT -->
+            <router-link to="/konfirmasi-pembayaran" class="nav-link"><b-icon-credit-card /> Konfirmasi Pembayaran</router-link>
           </b-nav-item>
 
-          <b-nav-item align="right">
-            <b-button type="submit" align="right" class="btnCart nav-link" v-b-modal.modal-center @click="cartDetail"><b-icon-cart/> {{checkoutBag.length}} Item</b-button>
-           <!-- MODAL BOX -->
-           <div>
-              <b-modal id="modal-center" centered title="Dalam Keranjang Belanjaan Saya">
-                      <div class="row itemKeranjang" v-for="item in checkoutBag" :key="item.id">
-                            <div class="col-md-3 itemDetail">
-                            <div class="card border-0 shadow mx-2">
-                              <img
-                                :src="'../assets/pakaian/'+item.products.gambar"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                           </div>
-                        </div>
-                        <div class="col-md-9 itemDetail">
-                          <h4>{{item.products.nama}}</h4>
-                          <h6>Ukuran : {{item.size}}</h6>
-                          <h6>Jumlah : {{item.jumlah}}</h6>
-                          <h6>Harga/Item : Rp. {{item.products.harga}}</h6>
-                          <h6>Harga/Total : Rp. {{(item.products.harga * item.jumlah)}}</h6>
-                          
-                          <!-- MODAL BOX KECIL -->
-                          <form class="formCustom" v-on:submit.prevent>
-                    <div class="form-group">
-                              <select class="inputCustom" placeholder="Ubah Size" v-model="item.size">
-                                <option value="Size S" selected>Size S</option>
-                                <option value="30 Size M">30 Size M</option>
-                                <option value="Size L">Size L</option>
-                                <option value="Size XL">Size XL</option>
-                            </select>
-                    </div>
-                    <div class="form-group">
-                      <input type="number" class="inputCustom" placeholder="Ubah Jumlah" v-model="item.jumlah">
-                    </div>
-                    <b-button type="submit" align="center" class="btnUbah" v-b-modal.modal-center @click="ubahKeranjang(item.id, item)">Ubah</b-button>
-                    <b-button type="submit" align="center" class="btnHapus" v-b-modal.modal-center @click="hapusKeranjang(item.id)">Hapus</b-button>
-                          </form>
+          <!-- HALAMAN LOGIN -->
+          <b-nav-item>
+            <router-link to="" class="nav-link" v-b-modal.modalLogin><b-icon-people /> Masuk / Daftar</router-link>
+            <div>
+              <b-modal
+                ref="my-modal"
+                hide-footer
+                id="modalLogin"
+                class="d-block text-center"
+                centered
+                title="Masuk">
+                <div class="d-block text-center"></div>
+                  <form ref="form" @submit.stop.prevent="login">
+                  <!-- email -->
+                  <b-form-group
+                    label="email *"
+                    label-for="email"
+                    invalid-feedback="email is required">
+                    <b-form-input
+                      id="email"
+                      v-model="email"
+                      required>
+                    </b-form-input>
+                  </b-form-group>
 
-                          </div>
-                        </div>
-                        <h5 class="totalBelanja"><strong>Total Belanja ({{checkoutBag.length}} pcs) : Rp. {{totalHarga}}</strong></h5>
-                    </b-modal>
+                  <!-- password -->
+                  <b-form-group
+                    label="password *"
+                    label-for="password"
+                    invalid-feedback="password is required">
+                    <b-form-input
+                      id="password"
+                      v-model="password"
+                      required>
+                    </b-form-input><br />
+
+                    <!-- link register -->
+                    <router-link to="/register" class="register"> Lupa Password? Atau Daftar
+                    </router-link>
+                  </b-form-group>
+
+                  <!-- tombol login -->
+                  <b-button
+                    class="mt-3"
+                    type="submit"
+                    variant="info"
+                    block> Masuk 
+                  </b-button>
+                </form>
+              </b-modal>
             </div>
           </b-nav-item>
 
+          <!-- HALAMAN ITEM -->
           <b-nav-item>
-            <form 
+            <button
+              type="submit"
+              align="right"
+              class="btnCart nav-link"
+              v-b-modal.modal-center
+              @click="cartDetail"
+            >
+              <b-icon-cart /> {{ checkoutBag.length }} Item
+            </button>
+            <!-- MODAL BOX -->
+            <div>
+              <b-modal
+                id="modal-center"
+                centered
+                title="Dalam Keranjang Belanjaan Saya"
+              >
+                <div
+                  class="row itemKeranjang"
+                  v-for="item in checkoutBag"
+                  :key="item.id"
+                >
+                  <div class="col-md-3 itemDetail">
+                    <div class="card border-0 shadow mx-2">
+                      <img
+                        :src="'../assets/pakaian/' + item.products.gambar"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-9 itemDetail">
+                    <h4>{{ item.products.nama }}</h4>
+                    <h6>Ukuran : {{ item.size }}</h6>
+                    <h6>Jumlah : {{ item.jumlah }}</h6>
+                    <h6>Harga/Item : Rp. {{ item.products.harga }}</h6>
+                    <h6>
+                      Harga/Total : Rp. {{ item.products.harga * item.jumlah }}
+                    </h6>
+
+                    <!-- FORM UBAH DELETE -->
+                    <form class="formCustom" v-on:submit.prevent>
+                      <div class="form-group">
+                        <select
+                          class="inputCustom"
+                          placeholder="Ubah Size"
+                          v-model="item.size"
+                        >
+                          <option value="Size S" selected>Size S</option>
+                          <option value="30 Size M">30 Size M</option>
+                          <option value="Size L">Size L</option>
+                          <option value="Size XL">Size XL</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="number"
+                          class="inputCustom"
+                          placeholder="Ubah Jumlah"
+                          v-model="item.jumlah"
+                        />
+                      </div>
+                      <b-button
+                        type="submit"
+                        align="center"
+                        class="btnUbah"
+                        v-b-modal.modal-center
+                        @click="ubahKeranjang(item.id, item)"
+                        >Ubah</b-button
+                      >
+                      <b-button
+                        type="submit"
+                        align="center"
+                        class="btnHapus"
+                        v-b-modal.modal-center
+                        @click="hapusKeranjang(item.id)"
+                        >Hapus</b-button
+                      >
+                    </form>
+                  </div>
+                </div>
+                <h5 class="totalBelanja">
+                  <strong
+                    >Total Belanja ({{ checkoutBag.length }} pcs) : Rp.
+                    {{ totalHarga }}</strong
+                  >
+                </h5>
+              </b-modal>
+            </div>
+          </b-nav-item>
+        </b-navbar-nav>
+        <form
           class="d-flex ml-auto mx-2"
           role="search"
           v-on:submit.prevent="submitproses"
@@ -96,15 +189,11 @@
             <b-icon-search />
           </button>
         </form>
-          </b-nav-item>
-
-        </b-navbar-nav>
-       
       </b-collapse>
     </b-navbar>
 
     <!-- BUTTON NAVIGASI -->
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
       <div class="row mt-5">
         <div class="col mt-5">
           <ul class="nav justify-content-center">
@@ -131,54 +220,55 @@
               >
               <router-link to="/product">
                 <button
-                type="button"
-                class="btnEdit"
-                :class="{ active: active(`celana`) }"
-                @click="buttonActive(`celana`)"
-              >
-                Celana
-              </button>
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(`celana`) }"
+                  @click="buttonActive(`celana`)"
+                >
+                  Celana
+                </button>
               </router-link>
 
               <router-link to="/product">
                 <button
-                type="button"
-                class="btnEdit"
-                :class="{ active: active(`tas`) }"
-                @click="buttonActive(`tas`)"
-              >
-                Tas
-              </button>
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(`tas`) }"
+                  @click="buttonActive(`tas`)"
+                >
+                  Tas
+                </button>
               </router-link>
               <router-link to="/product">
                 <button
-                type="button"
-                class="btnEdit"
-                :class="{ active: active(`kaoskaki`) }"
-                @click="buttonActive(`kaoskaki`)"
-              >
-                Kaos Kaki
-              </button>
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(`kaoskaki`) }"
+                  @click="buttonActive(`kaoskaki`)"
+                >
+                  Kaos Kaki
+                </button>
               </router-link>
-              <router-link to="/product"><button
-                type="button"
-                class="btnEdit"
-                :class="{ active: active(`topi`) }"
-                @click="buttonActive(`topi`)"
+              <router-link to="/product"
+                ><button
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(`topi`) }"
+                  @click="buttonActive(`topi`)"
+                >
+                  Topi
+                </button></router-link
               >
-                Topi
-              </button></router-link>
               <router-link to="/product">
                 <button
-                type="button"
-                class="btnEdit"
-                :class="{ active: active(`aksesoris`) }"
-                @click="buttonActive(`aksesoris`)"
-              >
-                Aksesoris
-              </button>
+                  type="button"
+                  class="btnEdit"
+                  :class="{ active: active(`aksesoris`) }"
+                  @click="buttonActive(`aksesoris`)"
+                >
+                  Aksesoris
+                </button>
               </router-link>
-              
             </li>
           </ul>
           <hr />
@@ -189,8 +279,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { mapActions,mapState, mapGetters } from 'vuex';
+import axios from "axios";
+import { mapActions, mapState, mapGetters } from "vuex";
 export default {
   name: `Navbar`,
   data: function () {
@@ -198,6 +288,8 @@ export default {
       menu: ``,
       caridata: ``,
       dataSearch: ``,
+      email:``,
+      password:``,
     };
   },
   computed: {
@@ -205,50 +297,44 @@ export default {
       return this.$store.state.dataSearchProduct;
     },
 
-    ...mapGetters([`totalHarga`,]),
-    ...mapState([`product`,`checkoutBag`,`pesan`]),
-
+    ...mapGetters([`totalHarga`]),
+    ...mapState([`product`, `checkoutBag`, `pesan`, `menu`]),
   },
   methods: {
+    ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
 
-    ...mapActions([`setCheckout`,`setProductId`,`setProductId`]),
-
-    cartDetail: function() {
-      this.setCheckout();
-    },
+    cartDetail: function () {},
 
     ubahKeranjang: function (id, item) {
       axios
-      .put("http://localhost:3000/checkout/"+id,
-      {
-        id : item.id,
-        jumlah: item.jumlah,
-        size : item.size,
-        products: {
-          id: item.products.id,
-          kode: item.products.kode,
-          nama: item.products.nama,
-          harga: item.products.harga,
-          is_ready: item.products.is_ready,
-          gambar: item.products.gambar,
-        },
-      })
-      .then(() => { 
-      // this.$router.push({ path : '/keranjang' })
-      this.$toast.success(`Pesanan ditambahkan ke keranjang`,{
-        duration : 3000,
-        message : `Pesanan berhasil ditambahkan`,
-        position : `top-right`,
-        dismissible : true,
-      })
-        //  setelah post axios, data checkout akan langsung ditampilkan
-        axios
-      .get("http://localhost:3000/checkout")
-      .then((response) => this.setCheckout(response.data))
-      .catch((error) => console.log("gagal : ", error));  
-    })
-      .catch((error) => console.log("gagal : ", error));
-     
+        .put("http://localhost:3000/checkout/" + id, {
+          id: item.id,
+          jumlah: item.jumlah,
+          size: item.size,
+          products: {
+            id: item.products.id,
+            kode: item.products.kode,
+            nama: item.products.nama,
+            harga: item.products.harga,
+            is_ready: item.products.is_ready,
+            gambar: item.products.gambar,
+          },
+        })
+        .then(() => {
+          // this.$router.push({ path : '/keranjang' })
+          this.$toast.success(`Pesanan ditambahkan ke keranjang`, {
+            duration: 3000,
+            message: `Pesanan berhasil ditambahkan`,
+            position: `top-right`,
+            dismissible: true,
+          });
+          //  setelah post axios, data checkout akan langsung ditampilkan
+          axios
+            .get("http://localhost:3000/checkout")
+            .then((response) => this.setCheckout(response.data))
+            .catch((error) => console.log("gagal : ", error));
+        })
+        .catch((error) => console.log("gagal : ", error));
     },
 
     hapusKeranjang: function (id) {
@@ -273,7 +359,7 @@ export default {
     },
 
     routeProduct: function () {
-      this.$router.push("/product").catch(()=>{});
+      this.$router.push("/product").catch(() => {});
       // this.$router.push({ path: "/product" });
     },
     submitproses: function (e) {
@@ -317,18 +403,24 @@ export default {
     },
   },
 
+  created() {
+    this.setCheckout();
+  },
+
   mounted() {
-    this.setProductId(this.$route.params.id);
-    
+    // this.setProductId(this.$route.params.id);
   },
 
   updated() {
-     this.$store.dispatch(`searchProduct`,this.caridata);
+    //  this.$store.dispatch(`searchProduct`,this.caridata);
   },
 };
 </script>
 
 <style scoped>
+.register {
+  text-decoration: none;
+}
 
 .btnUbah {
   background-color: rgb(230, 208, 19);
@@ -345,7 +437,6 @@ export default {
   border: 1px solid transparent;
   /* margin: 5px auto; */
 }
-  
 
 .formCustom {
   display: flex;
@@ -363,7 +454,7 @@ export default {
   height: 40px;
 }
 
-.totalBelanja  {
+.totalBelanja {
   text-align: center;
   color: rgb(35, 129, 98);
   display: block;
@@ -375,8 +466,11 @@ export default {
 }
 
 .btnCart {
+  border: 2px solid transparent;
+  /* background-color: transparent; */
   background-color: rgba(17, 175, 175, 0.678);
-  width: 120px;
+  width: 150px;
+  color: white;
 }
 
 .nav-link {
@@ -400,18 +494,3 @@ export default {
   transition: 0.4s;
 }
 </style>
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-harajuku/Navbar.vue at main · tioprananda/harajuku
