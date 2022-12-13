@@ -65,6 +65,11 @@ const routes = [
     component: DetailProduct,
   }, 
   {
+    path: '/bayar',
+    name: 'bayar',
+    component: Bayar
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting

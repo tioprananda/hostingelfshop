@@ -365,16 +365,16 @@
   ],
   "checkout": [
     {
-      "id": 5,
+      "id": 11,
       "jumlah": 1,
-      "size": "Size S",
+      "size": "All Size",
       "products": {
-        "id": 32,
-        "kode": "topi",
-        "nama": "Topi Fedora Caplin",
-        "harga": 29000,
+        "id": 27,
+        "kode": "baju",
+        "nama": "Hoddie Gray",
+        "harga": 12000,
         "is_ready": true,
-        "gambar": "to2_fedora_caplin_at-e07d8-3073_3442-t3073_116.jpg"
+        "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
       }
     }
   ]

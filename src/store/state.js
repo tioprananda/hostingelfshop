@@ -9,14 +9,14 @@ export default {
     // navbar, productview
     caridata : ``,
     dataSearch : ``,
-    menu : ``,
+    menuRincian : `detail`,
 
     // detailproduct
     checkoutBag: [],
     pesan : {
         id:``,
         jumlah:1,
-        size:`Size S`,
+        size:`All Size`,
         products:[],
       },
 
