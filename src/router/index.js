@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/ProductView.vue'
+import BajuView from '../views/BajuView.vue'
 import Register from '../views/Register.vue'
 import CaraBeli from '../components/FooterDetail/CaraBeli.vue'
 import PanduanUkuran from '../components/FooterDetail/PanduanUkuran.vue'
@@ -58,6 +59,11 @@ const routes = [
     path: '/product/:id',
     name: 'DetailProduct',
     component: DetailProduct,
+  }, 
+  {
+    path: '/bajuview',
+    name: 'BajuView',
+    component: BajuView,
   }, 
   {
     path: '/bayar',

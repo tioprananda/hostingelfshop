@@ -218,9 +218,8 @@
     <div class="container-fluid mt-5">
       <div class="row mt-5">
         <div class="col mt-5">
-          <ul class="nav justify-content-center">
-            <li class="nav-item mt-2">
-              <router-link to="/product"
+        
+              <!-- <router-link to="/product"
                 ><button
                   type="button"
                   class="btnEdit"
@@ -250,7 +249,6 @@
                   Celana
                 </button>
               </router-link>
-
               <router-link to="/product">
                 <button
                   type="button"
@@ -290,9 +288,38 @@
                 >
                   Aksesoris
                 </button>
-              </router-link>
-            </li>
-          </ul>
+              </router-link> -->
+              <nav class="navbar navbar-expand-lg" >
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav menuBaju">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/product"><b-icon-filter /> Semua</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/bajuview">Baju</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/celana">Celana</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/tas">Tas</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/kaoskaki">Kaos Kaki</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/topi">Topi</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/aksesoris">Aksesoris</router-link>
+        </li>
+      </ul>
+    </div>
+ 
+</nav>
+          
+          
           <hr />
         </div>
       </div>
@@ -309,7 +336,7 @@ export default {
     return {
       menu: ``,
       caridata: ``,
-      dataSearch: ``,
+      dataSearch: `baju`,
       email: ``,
       password: ``,
     };
@@ -390,6 +417,7 @@ export default {
       this.$router.push("/product").catch(() => {});
       // this.$router.push({ path: "/product" });
     },
+
     submitproses: function (e) {
       this.routeProduct();
       //  this.$store.dispatch(`submitproses`,e);
@@ -401,8 +429,7 @@ export default {
       }
     },
     tambahEmit: function (event) {
-      let dataCari = event;
-      this.caridata = dataCari;
+      this.caridata = event;
       this.cariproduct();
       // console.log(event)
     },
@@ -446,6 +473,20 @@ export default {
 </script>
 
 <style scoped>
+
+.menuBaju {
+  margin: auto;
+}
+
+.menuBaju .router-link-exact-active {
+  background: transparent;
+  color: rgba(17, 175, 175, 0.678);
+}
+
+.menuBaju .nav-link:hover {
+  color: rgb(79, 137, 175);
+}
+
 .register {
   text-decoration: none;
 }
@@ -502,7 +543,7 @@ export default {
 }
 
 .nav-link {
-  color: white;
+ color: rgb(51, 49, 49);
 }
 .btnSubmit {
   background-color: transparent;

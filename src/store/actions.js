@@ -29,6 +29,16 @@ export const searchProduct = ({commit}, dataSearch) => {
   .catch((error) => console.log("gagal : ", error));
 };
 
+// bajuview
+export const bajuProduct = ({commit}) => {
+  axios
+  .get("http://localhost:3000/products?q=baju")
+  .then((response) => {
+    commit(`BAJU_PRODUCT`, response.data)
+  })
+  .catch((error) => console.log("gagal : ", error));
+};
+
 // navbar
 export const submitproses = ({commit}, e) => {
   commit(`SUBMIT_PROSES`, e);

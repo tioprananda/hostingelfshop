@@ -20,6 +20,8 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import CardProduct from "@/components/CardProduct.vue";
+import { mapActions } from "vuex";
+import { searchProduct } from '@/store/actions';
 
 export default {
   name: `product`,
@@ -28,7 +30,9 @@ export default {
     CardProduct,
   },
   data: function () {
-    return {};
+    return {
+
+    };
   },
   computed: {
     dataSearchProduct: function () {
@@ -39,10 +43,15 @@ export default {
     },
   },
 
-  // mounted(){
-  //   this.$store.dispatch(`searchProduct`,this.caridata);
+  methods : {
+    ...mapActions([`searchProduct`])
+  },
 
-  // }
+  mounted(){
+    // this.$store.dispatch(`searchProduct`,this.caridata);
+    this.searchProduct(this.caridata)
+
+  }
 };
 </script>
 

@@ -22,6 +22,11 @@ export const SUBMIT_PROSES = (state, e) => {
      }
 }
 
+// bajuview 
+export const BAJU_PRODUCT = (state, bajuProduct) => {
+    state.dataBajuProduct = bajuProduct;
+};
+
 // detailproduct
 export const SETCHECKOUT = (state, setCheckout) => {
     state.checkoutBag = setCheckout;

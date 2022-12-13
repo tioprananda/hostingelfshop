@@ -5,6 +5,9 @@ export default {
 
     // productview
     dataSearchProduct: [],
+
+    // bajuview
+    dataBajuProduct : [],
   
     // navbar, productview
     caridata : ``,
