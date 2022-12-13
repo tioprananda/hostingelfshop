@@ -9,6 +9,7 @@ import Retur from '../components/FooterDetail/Retur.vue'
 import Faq from '../components/FooterDetail/Faq.vue'
 import NewsLetter from '../components/FooterDetail/NewsLetter.vue'
 import DetailProduct from '../views/DetailProduct.vue'
+import Bayar from '../views/Bayar.vue'
 
 Vue.use(VueRouter)
 
@@ -52,6 +53,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register,
+  }, 
+  {
+    path: '/bayar',
+    name: 'Bayar',
+    component: Bayar,
   }, 
   {
     path: '/product/:id',

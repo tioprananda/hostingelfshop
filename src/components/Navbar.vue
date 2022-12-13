@@ -83,20 +83,22 @@
           <b-nav-item>
             <button
               type="submit"
-              align="right"
               class="btnCart nav-link"
               v-b-modal.modal-center
-              @click="cartDetail"
             >
               <b-icon-cart /> {{ checkoutBag.length }} Item
             </button>
+
             <!-- MODAL BOX -->
             <div>
               <b-modal
+              ref="my-modal"
+                hide-footer
                 id="modal-center"
+                class="d-block text-center"
                 centered
-                title="Dalam Keranjang Belanjaan Saya"
-              >
+                title="Dalam Keranjang Belanjaan Saya">
+              
                 <div
                   class="row itemKeranjang"
                   v-for="item in checkoutBag"
@@ -167,6 +169,24 @@
                     {{ totalHarga }}</strong
                   >
                 </h5>
+
+                <b-button
+                    class="mt-3 btnItem"
+                    type="submit"
+                    variant="info"
+                    block
+                    @click="hideModal"> Lanjut Belanja
+                  </b-button>
+
+                  <b-button
+                    class="mt-3 btnItem"
+                    type="submit"
+                    variant="info"
+                    block
+                    @click="bayar"
+                    > Bayar
+                  </b-button>
+
               </b-modal>
             </div>
           </b-nav-item>
@@ -298,12 +318,18 @@ export default {
     },
 
     ...mapGetters([`totalHarga`]),
-    ...mapState([`product`, `checkoutBag`, `pesan`, `menu`]),
+    ...mapState([`product`, `checkoutBag`, `pesan`]),
   },
   methods: {
     ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
 
-    cartDetail: function () {},
+    hideModal: function () {
+        this.$refs['my-modal'].hide()
+      },
+
+    bayar : function() {
+       this.$router.push({ path : '/bayar' })
+    },
 
     ubahKeranjang: function (id, item) {
       axios
@@ -418,6 +444,7 @@ export default {
 </script>
 
 <style scoped>
+
 .register {
   text-decoration: none;
 }
