@@ -300,19 +300,19 @@
           <router-link class="nav-link" to="/bajuview">Baju</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/celana">Celana</router-link>
+          <router-link class="nav-link" to="/celanaview">Celana</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/tas">Tas</router-link>
+          <router-link class="nav-link" to="/tasview">Tas</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/kaoskaki">Kaos Kaki</router-link>
+          <router-link class="nav-link" to="/kaoskakiview">Kaos Kaki</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/topi">Topi</router-link>
+          <router-link class="nav-link" to="/topiview">Topi</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/aksesoris">Aksesoris</router-link>
+          <router-link class="nav-link" to="/aksesorisview">Aksesoris</router-link>
         </li>
       </ul>
     </div>
@@ -336,7 +336,7 @@ export default {
     return {
       menu: ``,
       caridata: ``,
-      dataSearch: `baju`,
+      dataSearch: ``,
       email: ``,
       password: ``,
     };
