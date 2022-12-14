@@ -5,6 +5,18 @@ export default {
 
     // productview
     dataSearchProduct: [],
+
+    // bajuview
+    dataBajuProduct : [],
+
+    // celanaview
+    dataCelanaProduct : [],
+
+    // tasview
+    dataTasProduct : [],
+
+    // kaoskakiview
+    dataKaosKakiProduct: [],
   
     // navbar, productview
     caridata : ``,

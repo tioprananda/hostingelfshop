@@ -82,21 +82,21 @@
           <b-nav-item>
             <button
               type="submit"
+              align="right"
               class="btnCart nav-link"
               v-b-modal.modal-center
             >
               <b-icon-cart /> {{ checkoutBag.length }} Item
             </button>
-
             <!-- MODAL BOX -->
             <div>
               <b-modal
-              ref="my-modal"
-                hide-footer
                 id="modal-center"
-                class="d-block text-center"
                 centered
                 title="Dalam Keranjang Belanjaan Saya"
+                ref="my-modal"
+                hide-footer
+                class="d-block text-center"
               >
                 <div
                   class="row itemKeranjang"
@@ -169,6 +169,26 @@
                     {{ totalHarga }}</strong
                   >
                 </h5>
+
+                <b-button
+                  class="mt-3"
+                  type="submit"
+                  variant="info"
+                  @click="hideModal"
+                  block
+                >
+                  Lanjut Belanja
+                </b-button>
+
+                <b-button
+                  class="mt-3"
+                  type="submit"
+                  variant="info"
+                  @click="bayar"
+                  block
+                >
+                  Bayar
+                </b-button>
               </b-modal>
             </div>
           </b-nav-item>
@@ -198,9 +218,8 @@
     <div class="container-fluid mt-5">
       <div class="row mt-5">
         <div class="col mt-5">
-          <ul class="nav justify-content-center">
-            <li class="nav-item mt-2">
-              <router-link to="/product"
+        
+              <!-- <router-link to="/product"
                 ><button
                   type="button"
                   class="btnEdit"
@@ -230,7 +249,6 @@
                   Celana
                 </button>
               </router-link>
-
               <router-link to="/product">
                 <button
                   type="button"
@@ -270,9 +288,38 @@
                 >
                   Aksesoris
                 </button>
-              </router-link>
-            </li>
-          </ul>
+              </router-link> -->
+              <nav class="navbar navbar-expand-lg" >
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav menuBaju">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/product"><b-icon-filter /> Semua</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/bajuview">Baju</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/celanaview">Celana</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/tasview">Tas</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/kaoskakiview">Kaos Kaki</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/topiview">Topi</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/aksesorisview">Aksesoris</router-link>
+        </li>
+      </ul>
+    </div>
+ 
+</nav>
+          
+          
           <hr />
         </div>
       </div>
@@ -300,12 +347,18 @@ export default {
     },
 
     ...mapGetters([`totalHarga`]),
-    ...mapState([`product`, `checkoutBag`, `pesan`, `menu`]),
+    ...mapState([`product`, `checkoutBag`, `pesan`]),
   },
   methods: {
     ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
 
-    cartDetail: function () {},
+    bayar: function () {
+      this.$router.push({ path: "/bayar" });
+    },
+
+    hideModal() {
+      this.$refs["my-modal"].hide();
+    },
 
     ubahKeranjang: function (id, item) {
       axios
@@ -364,6 +417,7 @@ export default {
       this.$router.push("/product").catch(() => {});
       // this.$router.push({ path: "/product" });
     },
+
     submitproses: function (e) {
       this.routeProduct();
       //  this.$store.dispatch(`submitproses`,e);
@@ -375,8 +429,7 @@ export default {
       }
     },
     tambahEmit: function (event) {
-      let dataCari = event;
-      this.caridata = dataCari;
+      this.caridata = event;
       this.cariproduct();
       // console.log(event)
     },
@@ -420,6 +473,19 @@ export default {
 </script>
 
 <style scoped>
+
+.menuBaju {
+  margin: auto;
+}
+
+.menuBaju .router-link-exact-active {
+  background: transparent;
+  color: rgba(17, 175, 175, 0.678);
+}
+
+.menuBaju .nav-link:hover {
+  color: rgb(79, 137, 175);
+}
 
 .register {
   text-decoration: none;
@@ -477,7 +543,7 @@ export default {
 }
 
 .nav-link {
-  color: white;
+ color: rgb(51, 49, 49);
 }
 .btnSubmit {
   background-color: transparent;

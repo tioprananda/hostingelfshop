@@ -1,3 +1,5 @@
+import { celanaProduct } from "./actions";
+
 // homeview
 export const SET_PRODUCT = (state, product) => {
     state.product = product;
@@ -20,6 +22,26 @@ export const SUBMIT_PROSES = (state, e) => {
          this.tambahEmit(state.dataSearch);
          state.dataSearch = "";
      }
+}
+
+// bajuview 
+export const BAJU_PRODUCT = (state, bajuProduct) => {
+    state.dataBajuProduct = bajuProduct;
+};
+
+// celanaproduct
+export const CELANA_PRODUCT = (state, celanaProduct) => {
+    state.dataCelanaProduct = celanaProduct;
+}
+
+// tasproduct
+export const TAS_PRODUCT = (state, tasProduct) => {
+    state.dataTasProduct = tasProduct;
+}
+
+// kaoskakiproduct
+export const KAOSKAKI_PRODUCT = (state, kaoskakiProduct) => {
+    state.dataKaoskakiProduct = kaoskakiProduct;
 }
 
 // detailproduct
