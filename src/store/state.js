@@ -16,7 +16,13 @@ export default {
     dataTasProduct : [],
 
     // kaoskakiview
-    dataKaosKakiProduct: [],
+    dataKaoskakiProduct: [],
+
+    // topiview
+    dataTopiProduct : [],
+
+    // aksesorisview
+    dataAksesorisProduct : [],
   
     // navbar, productview
     caridata : ``,

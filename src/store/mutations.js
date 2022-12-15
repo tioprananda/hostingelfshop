@@ -1,4 +1,4 @@
-import { celanaProduct } from "./actions";
+import { aksesorisProduct, celanaProduct, topiProduct } from "./actions";
 
 // homeview
 export const SET_PRODUCT = (state, product) => {
@@ -42,6 +42,16 @@ export const TAS_PRODUCT = (state, tasProduct) => {
 // kaoskakiproduct
 export const KAOSKAKI_PRODUCT = (state, kaoskakiProduct) => {
     state.dataKaoskakiProduct = kaoskakiProduct;
+}
+
+// topiProduct
+export const TOPI_PRODUCT = (state, topiProduct) => {
+    state.dataTopiProduct = topiProduct;
+}
+
+// aksesoridproduct
+export const AKSESORIS_PRODUCT = (state, aksesorisProduct) => {
+    state.dataAksesorisProduct = aksesorisProduct;
 }
 
 // detailproduct

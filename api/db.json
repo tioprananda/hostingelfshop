@@ -365,22 +365,9 @@
   ],
   "checkout": [
     {
-      "id": 2,
-      "jumlah": "2",
-      "size": "Size L",
-      "products": {
-        "id": 6,
-        "kode": "celana",
-        "nama": "Celana Pantai",
-        "harga": 30000,
-        "is_ready": true,
-        "gambar": "celana_pantai_motif_ocean_hx_1_copy-8f9ff-3073_6263-t3073_116.jpg"
-      }
-    },
-    {
-      "id": 3,
-      "jumlah": "1",
-      "size": "Size S",
+      "id": 6,
+      "jumlah": "10",
+      "size": "Size XL",
       "products": {
         "id": 24,
         "kode": "aksesoris",
@@ -391,29 +378,16 @@
       }
     },
     {
-      "id": 4,
-      "jumlah": "99",
-      "size": "Size XL",
+      "id": 7,
+      "jumlah": "88",
+      "size": "Size L",
       "products": {
-        "id": 26,
+        "id": 17,
         "kode": "baju",
-        "nama": "Kaos Putih Panjang",
-        "harga": 45000,
+        "nama": "Seragam Kemeja",
+        "harga": 69000,
         "is_ready": true,
-        "gambar": "okj_cotton_3_button_px_0-82737-3073_10729-t3073_116.jpg"
-      }
-    },
-    {
-      "id": 5,
-      "jumlah": 1,
-      "size": "All Size",
-      "products": {
-        "id": 5,
-        "kode": "celana",
-        "nama": "Jogger Hitam Pendek",
-        "harga": 56000,
-        "is_ready": true,
-        "gambar": "cdj_garment_pocket_list_009_bd_1-3c895-3073_2594-t3073_116.jpg"
+        "gambar": "kfsd_seragam_02_hx1-a110e-3073_8471-t3073_116.jpg"
       }
     }
   ]

@@ -62,12 +62,37 @@ export const tasProduct = ({commit}) => {
 // kaoskakiview
 export const kaoskakiProduct = ({commit}) => {
   axios 
-  .get('http://localhost:3000/products?q=kaos kaki')
+  .get('http://localhost:3000/products?q=kaoskaki')
   .then((response) => {
     commit(`KAOSKAKI_PRODUCT`,response.data)
   })
   .catch((error) => console.log(`gagal : ${error}`))
 };
+
+// topiview
+export const topiProduct = ({commit}) => {
+  axios
+  .get('http://localhost:3000/products?q=topi')
+  .then((response) => {
+    commit(`TOPI_PRODUCT`,response.data)
+  })
+  .catch((error) => console.log(`gagal : ${error}`))
+};
+
+// aksesorisview
+export const aksesorisProduct = ({commit}) => {
+  axios
+  .get('http://localhost:3000/products?q=aksesoris')
+  .then((response)=>{
+    commit(`AKSESORIS_PRODUCT`,response.data)
+  })
+  .catch((error) => console.log(`gagal : ${error}`))
+};
+
+// searcview
+// export const searchProduct = ({commit}) => {
+  
+// }
 
 // navbar
 export const submitproses = ({commit}, e) => {

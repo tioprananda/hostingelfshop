@@ -2,7 +2,7 @@
   <div class="tasView">
     <Navbar/>
     <div class="container">
-        <div class="top">
+        <div class="row">
             <ul class="col-md-3 nav justify-content-center" v-for="item in dataTasProduct" :key="item.id">
             <li class="nav-item"><CardProduct :productprop="item"/></li>
             </ul>

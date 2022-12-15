@@ -122,6 +122,7 @@ export default {
     ...mapActions([`setCheckout`,`setProductId`]),
    
     submitOrder : function (){
+     
       if(this.pesan.jumlah){
         this.pesan.products = this.product;
       axios

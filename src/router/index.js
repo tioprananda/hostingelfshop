@@ -4,6 +4,11 @@ import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/ProductView.vue'
 import BajuView from '../views/BajuView.vue'
 import CelanaView from '../views/CelanaView.vue'
+import TasView from '../views/TasView.vue'
+import KaoskakiView from '../views/KaoskakiView.vue'
+import TopiView from '../views/TopiView.vue'
+import AksesorisView from '../views/AksesorisView'
+import SearchView from '../views/SearchView'
 import Register from '../views/Register.vue'
 import CaraBeli from '../components/FooterDetail/CaraBeli.vue'
 import PanduanUkuran from '../components/FooterDetail/PanduanUkuran.vue'
@@ -75,6 +80,26 @@ const routes = [
     path : '/tasview',
     name : 'TasView',
     component : TasView,
+  },
+  {
+    path : '/kaoskakiview',
+    name : 'KaoskakiView',
+    component : KaoskakiView
+  },
+  {
+    path : '/topiview',
+    name : 'TopiView',
+    component : TopiView
+  },
+  {
+    path : '/aksesorisview',
+    name : 'AksesorisView',
+    component : AksesorisView
+  },
+  {
+    path : '/searchview',
+    name : 'SearchView',
+    component : SearchView
   },
   {
     path: '/bayar',

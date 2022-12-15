@@ -3,7 +3,7 @@
     <Navbar />
     <div class="container">
         <div class="row">
-            <ul class="nav col-md-3 justify-content-center" v-for="item in dataKaosKakiProduct" :key="item.id">
+            <ul class="nav col-md-3 justify-content-center" v-for="item in dataKaoskakiProduct" :key="item.id">
             <li class="nav-item"><CardProduct :productprop="item"/></li>
             </ul>
         </div>

@@ -218,108 +218,49 @@
     <div class="container-fluid mt-5">
       <div class="row mt-5">
         <div class="col mt-5">
-        
-              <!-- <router-link to="/product"
-                ><button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(``) }"
-                  @click="buttonActive(``)"
-                >
-                  <b-icon-filter /> Semua
-                </button></router-link
-              >
-              <router-link to="/product"
-                ><button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(`baju`) }"
-                  @click="buttonActive(`baju`)"
-                >
-                  Baju
-                </button></router-link
-              >
-              <router-link to="/product">
-                <button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(`celana`) }"
-                  @click="buttonActive(`celana`)"
-                >
-                  Celana
-                </button>
-              </router-link>
-              <router-link to="/product">
-                <button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(`tas`) }"
-                  @click="buttonActive(`tas`)"
-                >
-                  Tas
-                </button>
-              </router-link>
-              <router-link to="/product">
-                <button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(`kaoskaki`) }"
-                  @click="buttonActive(`kaoskaki`)"
-                >
-                  Kaos Kaki
-                </button>
-              </router-link>
-              <router-link to="/product"
-                ><button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(`topi`) }"
-                  @click="buttonActive(`topi`)"
-                >
-                  Topi
-                </button></router-link
-              >
-              <router-link to="/product">
-                <button
-                  type="button"
-                  class="btnEdit"
-                  :class="{ active: active(`aksesoris`) }"
-                  @click="buttonActive(`aksesoris`)"
-                >
-                  Aksesoris
-                </button>
-              </router-link> -->
-              <nav class="navbar navbar-expand-lg" >
-  
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav menuBaju">
-        <li class="nav-item">
-          <router-link class="nav-link" to="/product"><b-icon-filter /> Semua</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/bajuview">Baju</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/celanaview">Celana</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/tasview">Tas</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/kaoskakiview">Kaos Kaki</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/topiview">Topi</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/aksesorisview">Aksesoris</router-link>
-        </li>
-      </ul>
-    </div>
- 
-</nav>
-          
-          
+          <nav class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav menuBaju">
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/product"
+                    ><b-icon-filter /> Semua</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/bajuview"
+                    >Baju</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/celanaview"
+                    >Celana</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/tasview">Tas</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/kaoskakiview"
+                    >Kaos Kaki</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/topiview"
+                    >Topi</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/aksesorisview"
+                    >Aksesoris</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/searchview" hidden>Search</router-link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
           <hr />
         </div>
       </div>
@@ -414,7 +355,7 @@ export default {
     },
 
     routeProduct: function () {
-      this.$router.push("/product").catch(() => {});
+      this.$router.push("/searchview").catch(() => {});
       // this.$router.push({ path: "/product" });
     },
 
@@ -473,7 +414,6 @@ export default {
 </script>
 
 <style scoped>
-
 .menuBaju {
   margin: auto;
 }
@@ -543,7 +483,7 @@ export default {
 }
 
 .nav-link {
- color: rgb(51, 49, 49);
+  color: rgb(51, 49, 49);
 }
 .btnSubmit {
   background-color: transparent;
