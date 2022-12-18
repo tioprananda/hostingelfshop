@@ -112,7 +112,7 @@ export default {
 
   computed : {
 
-    ...mapGetters([`totalHarga`,]),
+    ...mapGetters([`totalHarga`,`pesanGetter`]),
     ...mapState([`product`,`checkoutBag`,`pesan`]),
    
   },
@@ -122,9 +122,11 @@ export default {
     ...mapActions([`setCheckout`,`setProductId`]),
    
     submitOrder : function (){
-     
-      if(this.pesan.jumlah){
+
+      if(this.pesan.jumlah && this.pesanGetter){
         this.pesan.products = this.product;
+        this.pesan.jumlah++;
+
       axios
       .post("http://localhost:3000/checkout",this.pesan)
       .then(() => { 
@@ -142,7 +144,8 @@ export default {
       .catch((error) => console.log("gagal : ", error));  
     })
       .catch((error) => console.log("gagal : ", error));
-      }else{
+    
+    }else{
         this.$toast.error(`Jumlah pesanan harus diisi`,{
         duration : 3000,
         message : `Jumlah pesanan harus diisi`,

@@ -115,14 +115,6 @@
       "gambar": "cjj_jeans_bd1-df301-3073_11234-t3073_116.jpg"
     },
     {
-      "id": 12,
-      "kode": "kaoskaki",
-      "nama": "kaos kaki hitam",
-      "harga": 12000,
-      "is_ready": true,
-      "gambar": "capture1235-102be-3073_8033-t3073_116.jpg"
-    },
-    {
       "id": 13,
       "kode": "aksesoris",
       "nama": "Dompet Kulit",
@@ -363,32 +355,5 @@
       "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "checkout": [
-    {
-      "id": 6,
-      "jumlah": "10",
-      "size": "Size XL",
-      "products": {
-        "id": 24,
-        "kode": "aksesoris",
-        "nama": "Liontin Naga Biru",
-        "harga": 30000,
-        "is_ready": true,
-        "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
-      }
-    },
-    {
-      "id": 7,
-      "jumlah": "88",
-      "size": "Size L",
-      "products": {
-        "id": 17,
-        "kode": "baju",
-        "nama": "Seragam Kemeja",
-        "harga": 69000,
-        "is_ready": true,
-        "gambar": "kfsd_seragam_02_hx1-a110e-3073_8471-t3073_116.jpg"
-      }
-    }
-  ]
+  "checkout": []
 }
