@@ -21,8 +21,10 @@
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">
+
+          <!-- HALAMAN PEMBAYARAN -->
           <b-nav-item>
-            <router-link to="/konfirmasi-pembayaran" class="nav-link"
+            <router-link to="" class="nav-link"
               ><b-icon-credit-card /> Konfirmasi Pembayaran</router-link
             >
           </b-nav-item>
@@ -217,9 +219,9 @@
     <!-- BUTTON NAVIGASI -->
     <div class="container-fluid mt-5">
       <div class="row mt-5">
-        <div class="col mt-5">
+        <div class="col mt-5 justify-content-center">
           <nav class="navbar navbar-expand-lg">
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-collapse" id="navbarNav2">
               <ul class="navbar-nav menuBaju">
                 <li class="nav-item">
                   <router-link class="nav-link" to="/product"
@@ -294,15 +296,24 @@ export default {
     ...mapActions([`setCheckout`, `setProductId`, `setProductId`]),
 
     bayar: function () {
-      this.$router.push({ path: "/bayar" });
+      this.$router.push({ path: "/prosesbayar" });
     },
 
     hideModal() {
       this.$refs["my-modal"].hide();
     },
 
-    ubahKeranjang: function (id, item) {
-      axios
+    ubahKeranjang: async function (id, item) {
+      parseInt(item.jumlah);
+      if(item.jumlah < 1) {
+        item.jumlah = 1;
+        this.$toast.error(`jumlah minimal belanja 1`, {
+            duration: 3000,
+            message: `Jumlah Pemesanan Min.1 item`,
+            position: `top-right`,
+            dismissible: true,})
+      }
+        await axios
         .put("http://localhost:3000/checkout/" + id, {
           id: item.id,
           jumlah: item.jumlah,
@@ -320,7 +331,7 @@ export default {
           // this.$router.push({ path : '/keranjang' })
           this.$toast.success(`Pesanan ditambahkan ke keranjang`, {
             duration: 3000,
-            message: `Pesanan berhasil ditambahkan`,
+            message: `Pesanan berhasil diubah`,
             position: `top-right`,
             dismissible: true,
           });
@@ -331,6 +342,8 @@ export default {
             .catch((error) => console.log("gagal : ", error));
         })
         .catch((error) => console.log("gagal : ", error));
+      
+    
     },
 
     hapusKeranjang: function (id) {
@@ -338,7 +351,7 @@ export default {
       axios
         .delete("http://localhost:3000/checkout/" + id)
         .then(() => {
-          this.$toast.success(`Pesanan berhasil dihapus`, {
+          this.$toast.error(`Pesanan berhasil dihapus`, {
             duration: 3000,
             message: `Pesanan berhasil dihapus`,
             position: `top-right`,

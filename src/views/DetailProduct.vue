@@ -60,7 +60,7 @@ Dapat digunakan pria & wanita (Unisex), cocok untuk bersepeda, jogging, hiking, 
                 </div>
             </div>
             <div class="col-md-2 mt-2">
-              <div class="classForm">
+              <div class="justify-content-center mx-auto classForm">
               <h4>PILIH UKURAN</h4>
               <h6>Anda tidak yakin? Lihat Detail Ukuran</h6>
               <div class="row">
@@ -112,22 +112,30 @@ export default {
 
   computed : {
 
-    ...mapGetters([`totalHarga`,`pesanGetter`]),
+    ...mapGetters([`totalHarga`,]),
     ...mapState([`product`,`checkoutBag`,`pesan`]),
    
   },
 
   methods: {
 
-    ...mapActions([`setCheckout`,`setProductId`]),
+    ...mapActions([`setCheckout`,`setProductId`,`orderProduct`]),
    
-    submitOrder : function (){
-
-      if(this.pesan.jumlah && this.pesanGetter){
+    submitOrder : async function (){
+     
+      if(this.pesan.jumlah){
         this.pesan.products = this.product;
-        this.pesan.jumlah++;
 
-      axios
+        if(this.pesan.jumlah < 1) {
+        this.pesan.jumlah = 1;
+        this.$toast.error(`jumlah minimal belanja 1`, {
+            duration: 3000,
+            message: `Jumlah Pemesanan Min.1 item`,
+            position: `top-right`,
+            dismissible: true,})
+        };
+        
+      await axios
       .post("http://localhost:3000/checkout",this.pesan)
       .then(() => { 
       // this.$router.push({ path : '/keranjang' })
@@ -144,16 +152,26 @@ export default {
       .catch((error) => console.log("gagal : ", error));  
     })
       .catch((error) => console.log("gagal : ", error));
-    
-    }else{
+      }else{
         this.$toast.error(`Jumlah pesanan harus diisi`,{
         duration : 3000,
         message : `Jumlah pesanan harus diisi`,
         position : `top-right`,
         dismissible : true,
       })}
-  
     },
+
+    // submitOrder : function () {
+    //   this.pesan.products = this.product;
+    //   this.pesan = {
+    //     size : this.pesan.size,
+    //     jumlah : this.pesan.jumlah,
+    //     products : this.pesan.products,
+    //   };
+    //   this.orderProduct(this.pesan);
+    //   console.log(this.pesan)
+    //   console.log(this.checkoutBag)
+    // },
 
     active: function (data) {
       // jika isi menu sama dengan data baru dari function active

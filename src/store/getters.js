@@ -10,11 +10,3 @@ export const totalHarga = (state) => {
 export const rincian = (state) => {
   return state.menu === `detail`;
 };
-
-export const checkoutBagGetter = state => state.products;
-
-export const pesanGetter = (state) => {
-  return state.pesan.find((item) => {
-    return item.id === state.product.id;
-  })
-}

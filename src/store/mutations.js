@@ -1,4 +1,4 @@
-import { aksesorisProduct, celanaProduct, topiProduct } from "./actions";
+import { orderProduct } from "./actions";
 
 // homeview
 export const SET_PRODUCT = (state, product) => {
@@ -59,6 +59,22 @@ export const SETCHECKOUT = (state, setCheckout) => {
     state.checkoutBag = setCheckout;
 };
 
+import axios from "axios";
 export const SET_PRODUCT_ID = (state, setProductId) => {
     state.product = setProductId;
+};
+
+// export const ORDER_PRODUCT = (state, pushOrder) => {
+//     let productId = state.pesan.find((item) => { return item.id === pushOrder.id});
+
+//     if(productId){
+//         productId.jumlah += pushOrder.jumlah;
+//         return;
+//     };
+//     state.checkoutBag.push(pushOrder)
+// };
+
+export const PROSES_BAYAR = (state, prosesBayar) => {
+    state.bayar = prosesBayar;
+
 }

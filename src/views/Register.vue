@@ -12,12 +12,12 @@
               <b-form-group
     
                 label="Email *"
-                label-for="email"
+                label-for="emailLogin"
                 invalid-feedback="email is required"
               >
                 <b-form-input
                 placeholder="Email Address"
-                  id="email"
+                  id="emailLogin"
                   v-model="email"
                   required
                 ></b-form-input>
@@ -31,7 +31,7 @@
               >
                 <b-form-input
                 placeholder="Password"
-                  id="password"
+                  id="passwordLogin"
                   v-model="password"
                   required
                 ></b-form-input>
@@ -60,7 +60,7 @@
               >
                 <b-form-input
                 placeholder="Email Address"
-                  id="email"
+                  type="email"
                   v-model="emailLupa"
                   required
                 ></b-form-input>
@@ -82,20 +82,34 @@
           
         </div>
 
+        <!-- REGISTER -->
         <div class="col-md-5 borderRegister">
             <h4 class="text-center">DAFTAR AKUN ELFS SHOP</h4><br>
-            <form ref="form" @submit.stop.prevent="login">
-              <!-- email -->
+            <form ref="form" @submit.prevent="register">
+              
               <b-form-group
-    
                 label="Nama *"
                 label-for="nama"
                 invalid-feedback="nama is required"
+                required
+              >
+                <b-form-input
+                placeholder="Nama"
+                  id="nama"
+                  v-model="namaRegister"
+                  required
+                ></b-form-input>
+              </b-form-group>
+
+              <b-form-group
+                label="Nama Lengkap *"
+                label-for="nama lengkap"
+                invalid-feedback="nama Lengkap is required"
+                required
               >
                 <b-form-input
                 placeholder="Nama Lengkap"
-                  id="nama"
-                  v-model="namaRegister"
+                  v-model="namaLengkapRegister"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -107,6 +121,7 @@
               >
                 <b-form-input
                 placeholder="Alamat Email"
+                type="email"
                   id="email"
                   v-model="emailRegister"
                   required
@@ -121,6 +136,7 @@
                 <b-form-input
                 placeholder="Nomor Handphone"
                   id="nomor"
+                  type="number"
                   v-model="nomorRegister"
                   required
                 ></b-form-input>
@@ -128,10 +144,11 @@
 
               <b-form-group
                 label="Buat Password *"
-                label-for="Buat Password"
+                label-for="inputPassword"
                 invalid-feedback="Buat Password is required"
               >
                 <b-form-input
+                type="password"
                 placeholder="Password mengandung huruf kecil, besar dan angka"
                   id="password"
                   v-model="passwordRegister"
@@ -141,46 +158,35 @@
 
               <b-form-group
                 label="Konfirmasi Password *"
-                label-for="Konfirmasi Password"
+                label-for="inputPassword"
                 invalid-feedback="Konfirmasi Password is required"
               >
                 <b-form-input
+                input="password"
                 placeholder="Ulangi Password"
                   id="passwordRepeat"
+                  type="password"
                   v-model="konfirmasiPasswordRegister"
                   required
                 ></b-form-input>
               </b-form-group>
 
-              <b-form-group
-                label="Konfirmasi Password *"
-                label-for="Konfirmasi Password"
-                invalid-feedback="Konfirmasi Password is required"
-              >
-                <b-form-input
-                placeholder="Ulangi Password"
-                  id="passwordRepeat"
-                  v-model="konfirmasiPasswordRegister"
-                  required
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group label="Jenis Kelamin *" label-for="jenis kelamin" invalid-feedback="Jenis Kelamin is required">
+              <b-form-group label="Jenis Kelamin *" label-for="jenis kelamin" required invalid-feedback="Jenis Kelamin is required">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Laki-laki">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Laki-laki" v-model="jenisKelamin">
                   <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Perempuan">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Perempuan" v-model="jenisKelamin">
                   <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                 </div>
               </b-form-group>
 
               <b-form-group  label="Tanggal Lahir *"
+              required
                 label-for="tanggal lahir"
                 invalid-feedback="Tanggal Lahir is required">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Pilih Tanggal</option>
+                <select class="form-select" aria-label="Default select example" v-model="tanggal" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -213,9 +219,8 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Pilih Bulan</option>
-                    <option value="Januari">Januari</option>
+                <select class="form-select" aria-label="Default select example" v-model="bulan" required> 
+                  <option value="Januari">Januari</option>
                     <option value="Februari">Februari</option>
                     <option value="Maret">Maret</option>
                     <option value="April">April</option>
@@ -228,8 +233,7 @@
                     <option value="November">November</option>
                     <option value="Desember">Desember</option>
                 </select>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Pilih Tahun</option>
+                <select class="form-select" aria-label="Default select example" v-model="tahun" required>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
                     <option value="2020">2020</option>
@@ -271,7 +275,6 @@
                   type="submit"
                   variant="info"
                   block
-                  @click="daftar"
                    >Daftar Member Baru</b-button
                 >
             </form><br>
@@ -284,6 +287,7 @@
 <script>
 // import VueRecaptcha from 'vue-recaptcha';
 import Navbar from "@/components/Navbar.vue";
+import axios from 'axios';
 export default {
   name: `Register`,
   components: {
@@ -296,16 +300,40 @@ export default {
       password:``,
       emailLupa :``,
       namaRegister : ``,
+      namaLengkapRegister : ``,
       emailRegister:``,
       nomorRegister:``,
       passwordRegister:``,
       konfirmasiPasswordRegister: ``,
+      jenisKelamin : ``,
+      tanggal : ``,
+      bulan : ``,
+      tahun : ``,
     }
   },
   methods: {
     masuk : function(){},
     daftar : function(){},
     kirim: function(){},
+    register : async function(){
+  
+      await axios
+        .post('http://localhost:3000/user', {
+          namaRegister : this.namaRegister,
+          namaLengkapRegister : this.namaLengkapRegister,
+          emailRegister : this.emailRegister,
+          nomorRegister : this.nomorRegister,
+          passwordRegister : this.passwordRegister,
+          konfirmasiPasswordRegister : this.konfirmasiPasswordRegister,
+          jenisKelamin : this.jenisKelamin,
+          tanggal : this.tanggal,
+          bulan : this.bulan,
+          tahun : this.tahun,
+        })
+        
+        this.$router.push(`/`);
+
+    },
   },
 };
 </script>
@@ -319,10 +347,13 @@ export default {
 option {
   font-size: 12px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 .form-select {
-  margin: 5px;
+  margin: 8px;
+  width: 120px;
+
 }
 
 .borderLogin {

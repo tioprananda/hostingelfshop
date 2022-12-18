@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 
 // homeview
 export const setProduct = ({commit}) => {
@@ -116,4 +116,23 @@ export const setProductId = ({commit}, paramsId) => {
         commit(`SET_PRODUCT_ID`, response.data)
       })
       .catch((error) => console.log("gagal : ", error));
+};
+
+// export const orderProduct = ({commit}, pushOrder) => {
+//   commit(`ORDER_PRODUCT`, pushOrder);
+// };
+
+// bayar
+export const prosesBayar = async ({commit}, {dataBayar, bag}) => {
+ await axios
+  .post(`http://localhost:3000/bayar`,dataBayar)
+  .then((response) => {
+    commit(`PROSES_BAYAR`, response.data);
+    bag.map((item) => {
+      return axios 
+      .delete("http://localhost:3000/checkout/" + item.id)
+    })
+    console.log(dataBayar)
+    console.log(bag)
+  })
 }

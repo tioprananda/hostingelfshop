@@ -38,4 +38,6 @@ export default {
         products:[],
       },
 
+    // bayar
+    bayar : {},
 }

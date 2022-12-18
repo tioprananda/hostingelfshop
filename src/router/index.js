@@ -17,9 +17,10 @@ import Faq from '../components/FooterDetail/Faq.vue'
 import NewsLetter from '../components/FooterDetail/NewsLetter.vue'
 import DetailProduct from '../views/DetailProduct.vue'
 import Bayar from '../views/Bayar.vue'
+import ProsesBayar from '../views/ProsesBayar.vue'
 
 Vue.use(VueRouter)
-
+const mode = 'history';
 const routes = [
   {
     path: '/',
@@ -107,6 +108,11 @@ const routes = [
     component: Bayar
   },
   {
+    path: '/prosesbayar',
+    name: 'ProsesBayar',
+    component: ProsesBayar
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -117,7 +123,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode
 })
 
 export default router
