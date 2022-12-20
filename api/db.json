@@ -435,6 +435,28 @@
         }
       ],
       "id": 14
+    },
+    {
+      "nama": "ad",
+      "telepon": "131",
+      "email": "asda@gmail.com",
+      "alamat": "123",
+      "order": [
+        {
+          "id": 2,
+          "jumlah": 1,
+          "size": "Size L",
+          "products": {
+            "id": 24,
+            "kode": "aksesoris",
+            "nama": "Liontin Naga Biru",
+            "harga": 30000,
+            "is_ready": true,
+            "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
+          }
+        }
+      ],
+      "id": 15
     }
   ],
   "user": []

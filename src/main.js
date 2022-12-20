@@ -6,6 +6,8 @@ import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import ToastPlugin from 'vue-toast-notification';
+// import { initializeApp } from "firebase/app";
+
 
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
@@ -23,3 +25,14 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBIDBauPRR6jDeIgV89sGTL9Eqrcib-VFI",
+//   authDomain: "elfsvue.firebaseapp.com",
+//   projectId: "elfsvue",
+//   storageBucket: "elfsvue.appspot.com",
+//   messagingSenderId: "436460836184",
+//   appId: "1:436460836184:web:e5f47661b926a209f3412d"
+// };
+
+// const app = initializeApp(firebaseConfig);
