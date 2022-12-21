@@ -1,19 +1,485 @@
 {
-  "posts": [
+  "best-products": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 27,
+      "kode": "baju",
+      "nama": "Hoddie Gray",
+      "harga": 12000,
+      "is_ready": true,
+      "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
+    },
+    {
+      "id": 28,
+      "kode": "baju",
+      "nama": "Kaos Hoddie",
+      "harga": 37000,
+      "is_ready": true,
+      "gambar": "ok_kaos_hoodie_kantong_pendek_it1-0519b-3073_10895-t3073_116.jpg"
+    },
+    {
+      "id": 29,
+      "kode": "baju",
+      "nama": "Kaos Neck Abu Muda",
+      "harga": 33000,
+      "is_ready": true,
+      "gambar": "plj_neck_abu_muda_bd_1_copy-d2d4d-3073_8933-t3073_116.jpg"
     }
   ],
-  "comments": [
+  "products": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "kode": "topi",
+      "nama": "Topi Hitam",
+      "harga": 20000,
+      "is_ready": true,
+      "gambar": "2-5a2e8-3073_8716-t3073_116.jpg"
+    },
+    {
+      "id": 2,
+      "kode": "tas",
+      "nama": "Tas Hijau",
+      "harga": 30000,
+      "is_ready": true,
+      "gambar": "2-deaa7-3073_8768-t3073_116.png"
+    },
+    {
+      "id": 3,
+      "kode": "kaoskaki",
+      "nama": "kaos kaki hitam",
+      "harga": 12000,
+      "is_ready": true,
+      "gambar": "capture1235-102be-3073_8033-t3073_116.jpg"
+    },
+    {
+      "id": 4,
+      "kode": "celana",
+      "nama": "Kodorai Jogger",
+      "harga": 55000,
+      "is_ready": true,
+      "gambar": "cdb_kodorai_jogger_karet_at1-c5dea-3073_9611-t3073_116.jpg"
+    },
+    {
+      "id": 5,
+      "kode": "celana",
+      "nama": "Jogger Hitam Pendek",
+      "harga": 56000,
+      "is_ready": true,
+      "gambar": "cdj_garment_pocket_list_009_bd_1-3c895-3073_2594-t3073_116.jpg"
+    },
+    {
+      "id": 6,
+      "kode": "celana",
+      "nama": "Celana Pantai",
+      "harga": 30000,
+      "is_ready": true,
+      "gambar": "celana_pantai_motif_ocean_hx_1_copy-8f9ff-3073_6263-t3073_116.jpg"
+    },
+    {
+      "id": 7,
+      "kode": "aksesoris",
+      "nama": "Cincin Skull",
+      "harga": 23000,
+      "is_ready": true,
+      "gambar": "cincin_qgz28_skull_tombak_sv_1-1d5e1-3073_2055-t3073_116.jpg"
+    },
+    {
+      "id": 8,
+      "kode": "celana",
+      "nama": "Chino Cropped",
+      "harga": 79000,
+      "is_ready": true,
+      "gambar": "cjb_chino_cropped_simple_cm1-41ad5-3073_8443-t3073_116.jpg"
+    },
+    {
+      "id": 9,
+      "kode": "celana",
+      "nama": "Chino Gray",
+      "harga": 88000,
+      "is_ready": true,
+      "gambar": "cjb_chino_simple_cm1-60153-3073_10278-t3073_116.jpg"
+    },
+    {
+      "id": 10,
+      "kode": "celana",
+      "nama": "Jogger Army",
+      "harga": 120000,
+      "is_ready": true,
+      "gambar": "cjb_jogger_import_army_hx1-497df-3073_9442-t3073_116.jpg"
+    },
+    {
+      "id": 11,
+      "kode": "celana",
+      "nama": "Jeans Panjang",
+      "harga": 630000,
+      "is_ready": true,
+      "gambar": "cjj_jeans_bd1-df301-3073_11234-t3073_116.jpg"
+    },
+    {
+      "id": 13,
+      "kode": "aksesoris",
+      "nama": "Dompet Kulit",
+      "harga": 25000,
+      "is_ready": true,
+      "gambar": "dprm_arf_ct_1-d4041-3073_2043-t3073_116.jpg"
+    },
+    {
+      "id": 14,
+      "kode": "kaoskaki",
+      "nama": "Kaos Kaki Pendek",
+      "harga": 13000,
+      "is_ready": true,
+      "gambar": "edit-37e23-3073_5623-t3073_116.jpg"
+    },
+    {
+      "id": 15,
+      "kode": "tas",
+      "nama": "Tas Monol",
+      "harga": 37000,
+      "is_ready": true,
+      "gambar": "gb_monol_dot_wangi_ct-a8dec-3073_11220-t3073_116.jpg"
+    },
+    {
+      "id": 16,
+      "kode": "baju",
+      "nama": "Batik Katun",
+      "harga": 59000,
+      "is_ready": true,
+      "gambar": "kfbd_batik_katun_5e17010_hx_1-4bcdf-3073_3144-t3073_116.jpg"
+    },
+    {
+      "id": 17,
+      "kode": "baju",
+      "nama": "Seragam Kemeja",
+      "harga": 69000,
+      "is_ready": true,
+      "gambar": "kfsd_seragam_02_hx1-a110e-3073_8471-t3073_116.jpg"
+    },
+    {
+      "id": 18,
+      "kode": "kaoskaki",
+      "nama": "Kaos Kaki Jari",
+      "harga": 18000,
+      "is_ready": true,
+      "gambar": "kkd_5_jari_at_1-7dc57-3073_4084-t3073_116.jpg"
+    },
+    {
+      "id": 19,
+      "kode": "kaoskaki",
+      "nama": "Kaos Kaki Belang Biru",
+      "harga": 12000,
+      "is_ready": true,
+      "gambar": "kkd_ankle_xy_line_02_bd1-9926b-3073_7739-t3073_116.jpg"
+    },
+    {
+      "id": 20,
+      "kode": "kaoskaki",
+      "nama": "Kaos Kaki Belang Hitam",
+      "harga": 12000,
+      "is_ready": true,
+      "gambar": "kkd_ankle_xy_line_02_hx1-8221e-3073_7742-t3073_116.jpg"
+    },
+    {
+      "id": 21,
+      "kode": "kaoskaki",
+      "nama": "Kaos Kaki Motif",
+      "harga": 10000,
+      "is_ready": true,
+      "gambar": "kkd_executive_motif_at_1-61c1d-3073_4042-t3073_116.jpg"
+    },
+    {
+      "id": 22,
+      "kode": "kaoskaki",
+      "nama": "Kaos Kaki Panjang",
+      "harga": 20000,
+      "is_ready": true,
+      "gambar": "kkj_executive_motif_at_1-daf1c-3073_4058-t3073_116.jpg"
+    },
+    {
+      "id": 23,
+      "kode": "aksesoris",
+      "nama": "Kacamata Aviator",
+      "harga": 34000,
+      "is_ready": true,
+      "gambar": "km4_aviator_6130_gd_1-95bef-3073_3071-t3073_116.jpg"
+    },
+    {
+      "id": 24,
+      "kode": "aksesoris",
+      "nama": "Liontin Naga Biru",
+      "harga": 30000,
+      "is_ready": true,
+      "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
+    },
+    {
+      "id": 25,
+      "kode": "aksesoris",
+      "nama": "Liontin Naga Emas",
+      "harga": 30000,
+      "is_ready": true,
+      "gambar": "liontin_pgz_178_naga_ct_0-e17f0-3073_3055-t3073_116.jpg"
+    },
+    {
+      "id": 26,
+      "kode": "baju",
+      "nama": "Kaos Putih Panjang",
+      "harga": 45000,
+      "is_ready": true,
+      "gambar": "okj_cotton_3_button_px_0-82737-3073_10729-t3073_116.jpg"
+    },
+    {
+      "id": 27,
+      "kode": "baju",
+      "nama": "Hoddie Gray",
+      "harga": 12000,
+      "is_ready": true,
+      "gambar": "okj_kaos_hoodie_kantong_panjang_at1-cc9ae-3073_10901-t3073_116.jpg"
+    },
+    {
+      "id": 28,
+      "kode": "baju",
+      "nama": "Kaos Hoddie",
+      "harga": 37000,
+      "is_ready": true,
+      "gambar": "ok_kaos_hoodie_kantong_pendek_it1-0519b-3073_10895-t3073_116.jpg"
+    },
+    {
+      "id": 29,
+      "kode": "baju",
+      "nama": "Kaos Neck Ungu",
+      "harga": 35000,
+      "is_ready": true,
+      "gambar": "pl_neck_hitam_um1-a0d67-3073_11063-t3073_116.jpg"
+    },
+    {
+      "id": 30,
+      "kode": "aksesoris",
+      "nama": "Syal Rajut",
+      "harga": 23000,
+      "is_ready": true,
+      "gambar": "syal_rajut_salur_harry_potter_bd_1-989e7-3073_2789-t3073_116.jpg"
+    },
+    {
+      "id": 31,
+      "kode": "topi",
+      "nama": "Topi Canvas Army",
+      "harga": 17000,
+      "is_ready": true,
+      "gambar": "to2_canvas_ori_bordir_army_it1-a209f-3073_9557-t3073_116.jpg"
+    },
+    {
+      "id": 32,
+      "kode": "topi",
+      "nama": "Topi Fedora Caplin",
+      "harga": 29000,
+      "is_ready": true,
+      "gambar": "to2_fedora_caplin_at-e07d8-3073_3442-t3073_116.jpg"
+    },
+    {
+      "id": 33,
+      "kode": "topi",
+      "nama": "Topi Snapback",
+      "harga": 19000,
+      "is_ready": true,
+      "gambar": "to2_snapback_nyc_am1-cb38a-3073_10313-t3073_116.jpg"
+    },
+    {
+      "id": 34,
+      "kode": "topi",
+      "nama": "Topi Basic Twill",
+      "harga": 18000,
+      "is_ready": true,
+      "gambar": "to3_basic_twill_corona_vs_indonesia_px1-7d945-3073_10245-t3073_116.jpg"
+    },
+    {
+      "id": 35,
+      "kode": "topi",
+      "nama": "Topi Komando Emboss",
+      "harga": 12000,
+      "is_ready": true,
+      "gambar": "to3_komando_emboss_bt1-bc0a2-3073_10856-t3073_116.jpg"
+    },
+    {
+      "id": 36,
+      "kode": "topi",
+      "nama": "Topi Tartan",
+      "harga": 32000,
+      "is_ready": true,
+      "gambar": "to3_painter_tartan_4_cm1-5e080-3073_11626-t3073_116.jpg"
+    },
+    {
+      "id": 37,
+      "kode": "tas",
+      "nama": "Tas Trim Gunung",
+      "harga": 170000,
+      "is_ready": true,
+      "gambar": "trim_gunung_peluit_40l_elfs_fk8607_im1-83fd4-3073_11398-t3073_116.jpg"
+    },
+    {
+      "id": 38,
+      "kode": "tas",
+      "nama": "Tas Ransel",
+      "harga": 20000,
+      "is_ready": true,
+      "gambar": "trim_ransel_multifungsi_bt1-0e221-3073_11172-t3073_116.jpg"
+    },
+    {
+      "id": 39,
+      "kode": "tas",
+      "nama": "Tas Pocket",
+      "harga": 34000,
+      "is_ready": true,
+      "gambar": "trm_2_pocket_simple_mo1-1e033-3073_10078-t3073_116.jpg"
+    },
+    {
+      "id": 40,
+      "kode": "tas",
+      "nama": "Tas Tote SIMPLE",
+      "harga": 30000,
+      "is_ready": true,
+      "gambar": "trm_tote_bag_simple_polos_hx1-baffc-3073_10655-t3073_116.jpg"
+    },
+    {
+      "id": 41,
+      "kode": "tas",
+      "nama": "Tas Waterproof",
+      "harga": 60000,
+      "is_ready": true,
+      "gambar": "trm_waterproof_tactical_simple_fk9301_ia1-1765b-3073_10586-t3073_116.jpg"
+    },
+    {
+      "id": 42,
+      "kode": "tas",
+      "nama": "Tas Water Resistant Lipat",
+      "harga": 45000,
+      "is_ready": true,
+      "gambar": "trm_water_resistant_lipat_elfs_1ax802_bd1-eae70-3073_7378-t3073_116.jpg"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "checkout": [],
+  "bayar": [
+    {
+      "nama": "asd",
+      "telepon": "134",
+      "email": "asd@asd.com",
+      "alamat": "asda",
+      "order": [
+        {
+          "id": 1,
+          "jumlah": 1,
+          "size": "All Size",
+          "products": {
+            "id": 28,
+            "kode": "baju",
+            "nama": "Kaos Hoddie",
+            "harga": 37000,
+            "is_ready": true,
+            "gambar": "ok_kaos_hoodie_kantong_pendek_it1-0519b-3073_10895-t3073_116.jpg"
+          }
+        }
+      ],
+      "id": 12
+    },
+    {
+      "nama": "as",
+      "telepon": "234",
+      "email": "asdadd@caom",
+      "alamat": "asd\n",
+      "order": [
+        {
+          "id": 1,
+          "jumlah": 1,
+          "size": "All Size",
+          "products": {
+            "id": 5,
+            "kode": "celana",
+            "nama": "Jogger Hitam Pendek",
+            "harga": 56000,
+            "is_ready": true,
+            "gambar": "cdj_garment_pocket_list_009_bd_1-3c895-3073_2594-t3073_116.jpg"
+          }
+        },
+        {
+          "id": 2,
+          "jumlah": 1,
+          "size": "All Size",
+          "products": {
+            "id": 15,
+            "kode": "tas",
+            "nama": "Tas Monol",
+            "harga": 37000,
+            "is_ready": true,
+            "gambar": "gb_monol_dot_wangi_ct-a8dec-3073_11220-t3073_116.jpg"
+          }
+        }
+      ],
+      "id": 13
+    },
+    {
+      "nama": "asda",
+      "telepon": "423",
+      "email": "sd@asd.com",
+      "alamat": "asd",
+      "order": [
+        {
+          "id": 1,
+          "jumlah": 1,
+          "size": "All Size",
+          "products": {
+            "id": 18,
+            "kode": "kaoskaki",
+            "nama": "Kaos Kaki Jari",
+            "harga": 18000,
+            "is_ready": true,
+            "gambar": "kkd_5_jari_at_1-7dc57-3073_4084-t3073_116.jpg"
+          }
+        }
+      ],
+      "id": 14
+    },
+    {
+      "nama": "ad",
+      "telepon": "131",
+      "email": "asda@gmail.com",
+      "alamat": "123",
+      "order": [
+        {
+          "id": 2,
+          "jumlah": 1,
+          "size": "Size L",
+          "products": {
+            "id": 24,
+            "kode": "aksesoris",
+            "nama": "Liontin Naga Biru",
+            "harga": 30000,
+            "is_ready": true,
+            "gambar": "liontin_pgz_178_naga_bt_1-efc2c-3073_3054-t3073_116.jpg"
+          }
+        }
+      ],
+      "id": 15
+    },
+    {
+      "nama": "tio",
+      "telepon": "123",
+      "email": "tio@gmail.com",
+      "alamat": "tio",
+      "order": [
+        {
+          "id": 3,
+          "jumlah": 1,
+          "size": "All Size",
+          "products": {
+            "id": 1,
+            "kode": "topi",
+            "nama": "Topi Hitam",
+            "harga": 20000,
+            "is_ready": true,
+            "gambar": "2-5a2e8-3073_8716-t3073_116.jpg"
+          }
+        }
+      ],
+      "id": 16
+    }
+  ],
+  "user": []
 }
