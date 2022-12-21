@@ -136,7 +136,7 @@ export default {
         };
         
       await axios
-      .post("http://localhost:3000/checkout",this.pesan)
+      .post("https://successful-lime-cygnet.cyclic.app/checkout",this.pesan)
       .then(() => { 
       // this.$router.push({ path : '/keranjang' })
       this.$toast.success(`Pesanan ditambahkan ke keranjang`,{
@@ -147,7 +147,7 @@ export default {
       })
         //  setelah post axios, data checkout akan langsung ditampilkan
         axios
-      .get("http://localhost:3000/checkout")
+      .get("https://successful-lime-cygnet.cyclic.app/checkout")
       .then((response) => this.setCheckout(response.data))
       .catch((error) => console.log("gagal : ", error));  
     })

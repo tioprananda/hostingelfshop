@@ -3,7 +3,7 @@ import axios from 'axios'
 // homeview
 export const setProduct = ({commit}) => {
     axios
-      .get("http://localhost:3000/products")
+      .get("https://successful-lime-cygnet.cyclic.app/products")
       .then((response) => {
         commit(`SET_PRODUCT`, response.data)
       })
@@ -12,7 +12,7 @@ export const setProduct = ({commit}) => {
 
 export const bestProduct = ({commit}) => {
     axios
-      .get("http://localhost:3000/best-products")
+      .get("https://successful-lime-cygnet.cyclic.app/best-products")
       .then((response) => {
         commit('BEST_PRODUCT',response.data)
       })
@@ -22,7 +22,7 @@ export const bestProduct = ({commit}) => {
 // productview
 export const searchProduct = ({commit}, dataSearch) => {
   axios
-  .get("http://localhost:3000/products?q="+dataSearch)
+  .get("https://successful-lime-cygnet.cyclic.app/products?q="+dataSearch)
   .then((response) => {
     commit(`SEARCH_PRODUCT`, response.data)
   })
@@ -32,7 +32,7 @@ export const searchProduct = ({commit}, dataSearch) => {
 // bajuview
 export const bajuProduct = ({commit}) => {
   axios
-  .get("http://localhost:3000/products?q=baju")
+  .get("https://successful-lime-cygnet.cyclic.app/products?q=baju")
   .then((response) => {
     commit(`BAJU_PRODUCT`, response.data)
   })
@@ -42,7 +42,7 @@ export const bajuProduct = ({commit}) => {
 // celanaview
 export const celanaProduct = ({commit}) => {
   axios
-  .get("http://localhost:3000/products?q=celana")
+  .get("https://successful-lime-cygnet.cyclic.app/products?q=celana")
   .then((response) => {
     commit(`CELANA_PRODUCT`,response.data)
   })
@@ -52,7 +52,7 @@ export const celanaProduct = ({commit}) => {
 // tasview
 export const tasProduct = ({commit}) => {
   axios
-  .get('http://localhost:3000/products?q=tas')
+  .get('https://successful-lime-cygnet.cyclic.app/products?q=tas')
   .then((response) => {
     commit(`TAS_PRODUCT`,response.data)
   })
@@ -62,7 +62,7 @@ export const tasProduct = ({commit}) => {
 // kaoskakiview
 export const kaoskakiProduct = ({commit}) => {
   axios 
-  .get('http://localhost:3000/products?q=kaoskaki')
+  .get('https://successful-lime-cygnet.cyclic.app/products?q=kaoskaki')
   .then((response) => {
     commit(`KAOSKAKI_PRODUCT`,response.data)
   })
@@ -72,7 +72,7 @@ export const kaoskakiProduct = ({commit}) => {
 // topiview
 export const topiProduct = ({commit}) => {
   axios
-  .get('http://localhost:3000/products?q=topi')
+  .get('https://successful-lime-cygnet.cyclic.app/products?q=topi')
   .then((response) => {
     commit(`TOPI_PRODUCT`,response.data)
   })
@@ -82,7 +82,7 @@ export const topiProduct = ({commit}) => {
 // aksesorisview
 export const aksesorisProduct = ({commit}) => {
   axios
-  .get('http://localhost:3000/products?q=aksesoris')
+  .get('https://successful-lime-cygnet.cyclic.app/products?q=aksesoris')
   .then((response)=>{
     commit(`AKSESORIS_PRODUCT`,response.data)
   })
@@ -102,7 +102,7 @@ export const submitproses = ({commit}, e) => {
 // detailproduct
 export const setCheckout = ({commit}) => {
    axios
-            .get("http://localhost:3000/checkout")
+            .get("https://successful-lime-cygnet.cyclic.app/checkout")
             .then((response) => {
               commit(`SETCHECKOUT`, response.data)
             })
@@ -111,7 +111,7 @@ export const setCheckout = ({commit}) => {
 
 export const setProductId = ({commit}, paramsId) => {
    axios
-      .get("http://localhost:3000/products/" + paramsId)
+      .get("https://successful-lime-cygnet.cyclic.app/products/" + paramsId)
       .then((response) => {
         commit(`SET_PRODUCT_ID`, response.data)
       })
@@ -125,12 +125,12 @@ export const setProductId = ({commit}, paramsId) => {
 // bayar
 export const prosesBayar = async ({commit}, {dataBayar, bag}) => {
  await axios
-  .post(`http://localhost:3000/bayar`,dataBayar)
+  .post(`https://successful-lime-cygnet.cyclic.app/bayar`,dataBayar)
   .then((response) => {
     commit(`PROSES_BAYAR`, response.data);
     bag.map((item) => {
       return axios 
-      .delete("http://localhost:3000/checkout/" + item.id)
+      .delete("https://successful-lime-cygnet.cyclic.app/checkout/" + item.id)
     })
     console.log(dataBayar)
     console.log(bag)

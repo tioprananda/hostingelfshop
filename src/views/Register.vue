@@ -318,7 +318,7 @@ export default {
     register : async function(){
   
       await axios
-        .post('http://localhost:3000/user', {
+        .post('https://successful-lime-cygnet.cyclic.app/user', {
           namaRegister : this.namaRegister,
           namaLengkapRegister : this.namaLengkapRegister,
           emailRegister : this.emailRegister,

@@ -314,7 +314,7 @@ export default {
             dismissible: true,})
       }
         await axios
-        .put("http://localhost:3000/checkout/" + id, {
+        .put("https://successful-lime-cygnet.cyclic.app/checkout/" + id, {
           id: item.id,
           jumlah: item.jumlah,
           size: item.size,
@@ -337,7 +337,7 @@ export default {
           });
           //  setelah post axios, data checkout akan langsung ditampilkan
           axios
-            .get("http://localhost:3000/checkout")
+            .get("https://successful-lime-cygnet.cyclic.app/checkout")
             .then((response) => this.setCheckout(response.data))
             .catch((error) => console.log("gagal : ", error));
         })
@@ -349,7 +349,7 @@ export default {
     hapusKeranjang: function (id) {
       // axios hapus data
       axios
-        .delete("http://localhost:3000/checkout/" + id)
+        .delete("https://successful-lime-cygnet.cyclic.app/checkout/" + id)
         .then(() => {
           this.$toast.error(`Pesanan berhasil dihapus`, {
             duration: 3000,
@@ -359,7 +359,7 @@ export default {
           });
           // setelah dihapus, panggil kembali data yg tersisa
           axios
-            .get("http://localhost:3000/checkout")
+            .get("https://successful-lime-cygnet.cyclic.app/checkout")
             .then((response) => this.setCheckout(response.data))
             .catch((error) => console.log("gagal : ", error));
         })
